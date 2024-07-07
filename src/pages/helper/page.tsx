@@ -78,7 +78,12 @@ export default function Helper() {
         </Typographie>
       </div>
       <div className="flex flex-col space-y-5 w-max">
-        <Button variant="button" icon="true" className="pl-2.5">
+        <Button
+          variant="button"
+          icon="true"
+          className="pl-2.5 underline underline-offset-2"
+          fontFamily="Cooper"
+        >
           Bouton avec icône
         </Button>
         <Button variant="link" icon="true">
@@ -94,7 +99,7 @@ export default function Helper() {
         </Typographie>
       </div>
       <div className="flex flex-col space-y-5 w-max">
-        <Button variant="button" icon="false">
+        <Button variant="button" icon="false" disable fontFamily="Cooper">
           Bouton sans icône
         </Button>
         <Button variant="link" icon="false">

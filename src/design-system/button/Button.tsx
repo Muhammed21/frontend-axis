@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import Image from "next/image";
 
 interface Props {
-  variant?: "link" | "button";
+  variant?: "link" | "demi-link" | "button";
   fontFamily?: "Cooper" | "Courier";
   icon?: "true" | "false";
   src?: String;
@@ -39,7 +39,11 @@ export const Button = ({
   switch (variant) {
     case "link":
       variantStyles =
-        "underline underline-offset-1 whitespace-nowrap w-max h-max text-h4";
+        "underline underline-offset-2 whitespace-nowrap w-max h-max text-h4";
+      break;
+    case "demi-link":
+      variantStyles =
+        "underline underline-offset-2 whitespace-nowrap w-max h-max text-h4";
       break;
     case "button":
       variantStyles =
@@ -62,14 +66,30 @@ export const Button = ({
       disabled={disable}
       onClick={onClick}
     >
-      {icon === "true" ? (
+      {disable ? (
         <div className="flex flex-row gap-2 items-center align-middle justify-center">
-          <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
-          <div className="underline-from-left text-black">{children}</div>
+          <div className="underline-from-left-disable text-black cursor-not-allowed">
+            Bouton désactivé
+          </div>
         </div>
       ) : (
-        <div className="flex flex-row gap-2 items-center align-middle justify-center">
-          <div className="underline-from-left text-black">{children}</div>
+        <div>
+          {icon === "true" ? (
+            <div className="flex flex-row gap-2 items-center align-middle justify-center">
+              <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
+              {variant === "demi-link" ? (
+                <div className="underline-from-left-projet text-black">
+                  {children}
+                </div>
+              ) : (
+                <div className="underline-from-left text-black">{children}</div>
+              )}
+            </div>
+          ) : (
+            <div className="flex flex-row gap-2 items-center align-middle justify-center">
+              <div className="underline-from-left text-black">{children}</div>
+            </div>
+          )}
         </div>
       )}
     </button>

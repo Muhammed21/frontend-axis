@@ -4,6 +4,10 @@ import { Typographie } from "@/design-system/typographie/Typographie";
 import { Button } from "@/design-system/button/Button";
 import { Container } from "@/components/container/Container";
 import { Menu } from "@/components/menu/Menu";
+import { Header } from "@/components/header/Header";
+import { Separator } from "@/components/separator/Separator";
+import { Projet } from "@/components/projet/Projet";
+import AnimatedText from "@/components/animated-text/animatedText";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,23 +15,25 @@ export default function Home() {
   return (
     <Container>
       <Menu>Axis Studio</Menu>
-      <Typographie size="h1" balise="h1" fontFamily="Cooper">
-        Cooper - h1
-      </Typographie>
-      <Typographie size="h1" balise="h1" fontFamily="Courier">
-        Courier - h1
-      </Typographie>
-      <Button
-        variant="button"
-        icon="true"
-        className="pl-2 underline rounded-none"
-        fontFamily="Cooper"
-      >
-        Planifier un appel
-      </Button>
-      <Button variant="link" fontFamily="Courier" icon="true">
-        En savoir plus
-      </Button>
+      <Header />
+      <Separator variant="simple" border="large" />
+      <div className="flex flex-row items-center justify-between align-middle">
+        <div className="flex flex-row items-center align-middle w-max gap-2">
+          <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
+          <Typographie size="h4" balise="h4" className="cursor-e-resize">
+            <AnimatedText>Nous contacter par mail -:- </AnimatedText>
+            <Button variant="link" icon="false">
+              contact@axis-studio.fr
+            </Button>
+          </Typographie>
+        </div>
+        <Button variant="button" icon="false">
+          Planifier un appel
+        </Button>
+      </div>
+      <Separator variant="double" />
+      <Projet>Nos meilleurs projets</Projet>
+      <Separator variant="double" />
     </Container>
   );
 }
