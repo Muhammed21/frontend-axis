@@ -4,7 +4,7 @@ import clsx from "clsx";
 interface Props {
   size?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   balise?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-  fontFamily?: "Cooper" | "CooperLight" | "Courier";
+  fontFamily?: "Cooper" | "CooperLight" | "Courier" | "MaisonNeue";
   theme?: "black" | "gray";
   weight?: "light" | "regular" | "medium" | "bold";
   className?: String;
@@ -16,6 +16,9 @@ const cooperLight = localFont({
 });
 const cooperRegular = localFont({
   src: "../font/CooperBTLight-normal-400-100.ttf", //Police CooperBTLight qui est en local
+});
+const maisonNeueLight = localFont({
+  src: "../font/Maison-Neue-Mono.ttf",
 });
 
 export const Typographie = ({
@@ -61,6 +64,9 @@ export const Typographie = ({
       break;
     case "CooperLight":
       fontStyles = `${cooperLight.className}`;
+      break;
+    case "MaisonNeue":
+      fontStyles = `${maisonNeueLight.className}`;
       break;
     case "Courier":
       fontStyles = "font-['courier']";

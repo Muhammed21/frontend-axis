@@ -4,7 +4,7 @@ import Image from "next/image";
 
 interface Props {
   variant?: "link" | "demi-link" | "button";
-  fontFamily?: "Cooper" | "Courier";
+  fontFamily?: "Cooper" | "Courier" | "MaisonNeue";
   icon?: "true" | "false";
   src?: String;
   disable?: boolean;
@@ -17,6 +17,9 @@ interface Props {
 
 const cooperRegular = localFont({
   src: "../font/CooperBTLight-normal-400-100.ttf", //Police CooperBTLight qui est en local
+});
+const maisonNeueLight = localFont({
+  src: "../font/Maison-Neue-Mono.ttf",
 });
 
 export const Button = ({
@@ -57,6 +60,9 @@ export const Button = ({
       break;
     case "Courier":
       fontStyles = "font-['courier']";
+      break;
+    case "MaisonNeue":
+      fontStyles = `${maisonNeueLight.className}`;
       break;
   }
 

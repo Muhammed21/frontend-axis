@@ -8,6 +8,8 @@ import { Header } from "@/components/header/Header";
 import { Separator } from "@/components/separator/Separator";
 import { Projet } from "@/components/projet/Projet";
 import AnimatedText from "@/components/animated-text/animatedText";
+import { Article } from "@/components/article/Article";
+import { Tarif } from "@/components/tarif/Tarif";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -34,6 +36,9 @@ export default function Home() {
       <Separator variant="double" />
       <Projet>Nos meilleurs projets</Projet>
       <Separator variant="double" />
+      <Article>Pourquoi nous ?</Article>
+      <Separator variant="simple" border="fine" />
+      <Tarif>Nos tarifs</Tarif>
     </Container>
   );
 }

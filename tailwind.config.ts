@@ -62,6 +62,7 @@ const config = {
     },
     colors: {
       gray: "#666666",
+      badge: "#373737",
       black: "#000000",
       white: "#FFFFFF",
     },

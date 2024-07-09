@@ -1,25 +1,25 @@
 import { Button } from "@/design-system/button/Button";
 import { Typographie } from "@/design-system/typographie/Typographie";
 import clsx from "clsx";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import AnimatedText from "../animated-text/animatedText";
+import Image from "next/image";
+
+const ARTICLE_URL = "/api/article";
 
 interface Props {
   children: React.ReactNode;
   id?: number;
-  img?: String;
-  title?: String;
-  content?: String;
-  button?: String;
+  badge?: string;
+  title?: string;
+  content?: string;
+  button?: string;
 }
 
-const PROJET_URL = "/api/projet";
-
-export const Projet = ({
+export const Article = ({
   children,
   id,
-  img,
+  badge,
   title,
   content,
   button,
@@ -33,7 +33,7 @@ export const Projet = ({
     const fetchPosts = async () => {
       setIsLoading(true);
       try {
-        const res = await fetch(`${PROJET_URL}?page=${page}`);
+        const res = await fetch(`${ARTICLE_URL}?page=${page}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
@@ -48,9 +48,18 @@ export const Projet = ({
 
     fetchPosts();
   }, [page]);
-
+  // Vérification des états de chargement et d'erreur après l'appel de tous les hooks
+  if (isLoading) {
+    return (
+      <div className="flex w-full h-screen justify-center items-center">
+        <Button variant="button" icon="true">
+          Cargement en courq
+        </Button>
+      </div>
+    );
+  }
   return (
-    <section className="flex flex-col space-y-5">
+    <section className="flex flex-col w-full justify-between space-y-5">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
         <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
         <Typographie
@@ -62,26 +71,22 @@ export const Projet = ({
           <AnimatedText>{children}</AnimatedText>
         </Typographie>
       </div>
-      <div className="flex flex-row w-full justify-between">
+      <div className="flex flex-row">
         {table.map((data, index) => (
           <div
-            key={data.id}
             className={clsx(
-              "flex flex-col border-r border-black relative h-max w-max px-3 items-start justify-start gap-4 image-container",
-              index === 3 && "border-none pr-0", // Styles pour le 4er element
-              index === 0 && "pl-0" // Styles pour le 1er element
+              "flex flex-col relative space-y-4 border-r border-black px-3 items-start justify-start w-full max-w-[330px] space-x-4",
+              index === 0 && "pl-0",
+              index === 3 && "border-r-0"
             )}
           >
-            <Image
-              //   src={data.img}
-              src="/images/article-grid.png"
-              width={320}
-              height={170}
-              className="grayscale image"
-              alt=""
-            />
-            <div className="flex flex-col items-start justify-between align-top h-[140px]">
-              <div className="flex flex-col items-start gap-2">
+            <div className="flex relative flex-col items-start w-max justify-between align-top h-max space-y-5">
+              <div className="bg-badge/20 px-1.5 py-1 w-max h-max">
+                <Typographie size="h5" balise="h5" theme="gray">
+                  {data.badge}
+                </Typographie>
+              </div>
+              <div className="flex flex-col items-start justify-start gap-2">
                 <Typographie
                   fontFamily="Cooper"
                   size="h2"
@@ -94,7 +99,7 @@ export const Projet = ({
                   size="h5"
                   balise="h5"
                   fontFamily="MaisonNeue"
-                  className="max-w-[280px] leading-5 text-black/85"
+                  className="max-w-[295px] leading-5 text-black/85"
                 >
                   {data.content}
                 </Typographie>
