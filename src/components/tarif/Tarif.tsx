@@ -86,6 +86,7 @@ export const Tarif = ({
       <div className="flex flex-row w-full justify-between">
         {table.map((data, index) => (
           <div
+            key={data.id}
             className={clsx(
               "flex flex-col items-start max-w-[330px] w-full space-y-4 border-r px-4 border-black",
               index === 0 && "pl-0",

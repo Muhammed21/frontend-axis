@@ -74,6 +74,7 @@ export const Article = ({
       <div className="flex flex-row">
         {table.map((data, index) => (
           <div
+            key={data.id}
             className={clsx(
               "flex flex-col relative space-y-4 border-r border-black px-3 items-start justify-start w-full max-w-[330px] space-x-4",
               index === 0 && "pl-0",
