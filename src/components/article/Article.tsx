@@ -51,9 +51,9 @@ export const Article = ({
   // Vérification des états de chargement et d'erreur après l'appel de tous les hooks
   if (isLoading) {
     return (
-      <div className="flex w-full h-screen justify-center items-center">
-        <Button variant="button" icon="true">
-          Cargement en courq
+      <div className="flex w-full h-max justify-center items-center">
+        <Button variant="button" icon="true" isLoading>
+          Chargement en cours
         </Button>
       </div>
     );
@@ -81,7 +81,7 @@ export const Article = ({
               index === 3 && "border-r-0"
             )}
           >
-            <div className="flex relative flex-col items-start w-max justify-between align-top h-max space-y-5">
+            <div className="flex relative flex-col items-start justify-between align-top h-max space-y-5">
               <div className="bg-badge/20 px-1.5 py-1 w-max h-max">
                 <Typographie size="h5" balise="h5" theme="gray">
                   {data.badge}
@@ -100,7 +100,7 @@ export const Article = ({
                   size="h5"
                   balise="h5"
                   fontFamily="MaisonNeue"
-                  className="max-w-[295px] leading-5 text-black/85"
+                  className=" w-full max-w-[295px] leading-5 text-black/85"
                 >
                   {data.content}
                 </Typographie>

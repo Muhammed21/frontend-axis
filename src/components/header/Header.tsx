@@ -18,7 +18,7 @@ export const Header = () => {
             <AnimatedText>Articles</AnimatedText>
           </Typographie>
         </div>
-        <Typographie size="h1" balise="h1" theme="black">
+        <Typographie size="h1" balise="h1" theme="black" weight="light">
           What are icons? What are their benefits and what are they used to
           achieve? Get an overview here.
         </Typographie>

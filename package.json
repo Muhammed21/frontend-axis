@@ -9,14 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/drei": "^9.108.3",
+    "@react-three/fiber": "^8.16.8",
+    "@stripe/react-stripe-js": "^2.7.3",
+    "@stripe/stripe-js": "^4.1.0",
+    "@studio-freight/lenis": "^1.0.42",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.3.2",
     "lucide-react": "^0.400.0",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "stripe": "^16.2.0",
+    "tailwind-merge": "^2.4.0",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.166.1",
+    "three-globe": "^2.31.1"
   },
   "devDependencies": {
     "@types/node": "^20",

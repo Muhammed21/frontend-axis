@@ -150,13 +150,16 @@ export const Menu = ({
           className="relative flex w-full items-center justify-center align-middle"
         >
           <Separator variant="simple" border="large" />
-          <Button
-            variant="button"
-            className="absolute bg-white"
-            fontFamily="Courier"
-          >
-            {data.at}
-          </Button>
+          <div className="absolute bg-white z-10">
+            <Button
+              variant="button"
+              className=""
+              icon="false"
+              fontFamily="Cooper"
+            >
+              {data.at}
+            </Button>
+          </div>
         </div>
       ))}
     </section>

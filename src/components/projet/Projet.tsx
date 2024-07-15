@@ -99,7 +99,12 @@ export const Projet = ({
                   {data.content}
                 </Typographie>
               </div>
-              <Button fontFamily="Courier" variant="demi-link" icon="true">
+              <Button
+                fontFamily="Courier"
+                variant="demi-link"
+                icon="true"
+                className=""
+              >
                 {data.button}
               </Button>
             </div>

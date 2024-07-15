@@ -22,7 +22,8 @@ export default function Helper() {
       <div className="flex flex-row w-max gap-2 items-center align-middle">
         <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
         <Typographie size="h4" balise="h4" fontFamily="Courier">
-          Typographie -:- <span className="underline">font #Cooper</span>
+          Typographie -:-{" "}
+          <span className="underline">font &apos;#Cooper&apos;</span>
         </Typographie>
       </div>
       <Typographie size="h1" balise="h1" fontFamily="Cooper">
@@ -48,7 +49,8 @@ export default function Helper() {
       <div className="flex flex-row w-max gap-2 items-center align-middle">
         <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
         <Typographie size="h4" balise="h4" fontFamily="Courier">
-          Typographie -:- <span className="underline">font #Courier</span>
+          Typographie -:-{" "}
+          <span className="underline">font &apos;#Courier&apos;</span>
         </Typographie>
       </div>
       <Typographie size="h1" balise="h1" fontFamily="Courier">

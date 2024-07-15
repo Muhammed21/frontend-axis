@@ -64,6 +64,10 @@ const config = {
       gray: "#666666",
       badge: "#373737",
       black: "#000000",
+      lightgray: "#FAFAFA",
+      lightorange: "#FFF4D6",
+      orange: "#FFB224",
+      blue: "#3663F6",
       white: "#FFFFFF",
     },
     container: {

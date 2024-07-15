@@ -10,8 +10,12 @@ import { Projet } from "@/components/projet/Projet";
 import AnimatedText from "@/components/animated-text/animatedText";
 import { Article } from "@/components/article/Article";
 import { Tarif } from "@/components/tarif/Tarif";
+import { Fonctionnalite } from "@/components/fonctionnalite/Fonctionnalite";
+import Checkout from "@/components/buyButton/buyButton";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const plan = { name: "Plan à 250€", amount: 1050, id: 1 }; // Exemple de plan, adaptez selon vos besoins
 
 export default function Home() {
   return (
@@ -36,9 +40,11 @@ export default function Home() {
       <Separator variant="double" />
       <Projet>Nos meilleurs projets</Projet>
       <Separator variant="double" />
-      <Article>Pourquoi nous ?</Article>
+      <Fonctionnalite>Nos fonctionnalités clés</Fonctionnalite>
+      <Separator variant="double" />
+      <Article>Pourquoi nous choisir ?</Article>
       <Separator variant="simple" border="fine" />
-      <Tarif>Nos tarifs</Tarif>
+      <Tarif>Des tarifs simples et transparents</Tarif>
     </Container>
   );
 }

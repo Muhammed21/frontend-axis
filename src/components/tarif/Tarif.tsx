@@ -4,6 +4,7 @@ import AnimatedText from "../animated-text/animatedText";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
+import Checkout from "../buyButton/buyButton";
 
 const TARIF_URL = "/api/tarif";
 
@@ -22,7 +23,8 @@ interface Props {
   critaire6?: string;
   critaire7?: string;
   critaire8?: string;
-  price?: string;
+  button?: string;
+  stripeLink?: number;
   imgBottom?: string;
   populaire?: boolean;
 }
@@ -42,10 +44,12 @@ export const Tarif = ({
   critaire6,
   critaire7,
   critaire8,
-  price,
+  button,
+  stripeLink,
   imgTop,
   populaire,
 }: Props) => {
+  const plan = { name: "Plan à 250€", amount: 250, id: 1 };
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [table, setTable] = useState<Props[]>([]);
@@ -70,6 +74,7 @@ export const Tarif = ({
 
     fetchPosts();
   }, [page]);
+
   return (
     <section className="flex flex-col items-start justify-start gap-5">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
@@ -96,9 +101,22 @@ export const Tarif = ({
             <div className="border border-black img-pattern align-middle h-11 w-full" />
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
-                <Typographie size="h2" balise="h2" fontFamily="Cooper">
-                  {data.title}
-                </Typographie>
+                {data.populaire ? (
+                  <div className="flex flex-row gap-2.5 align-middle items-center">
+                    <Typographie size="h2" balise="h2" fontFamily="Cooper">
+                      {data.title}
+                    </Typographie>
+                    <div className="bg-[#37373724] border border-black px-1.5 py-1 align-middle items-center justify-center h-max w-max">
+                      <Typographie size="h5" balise="h5">
+                        Populaire
+                      </Typographie>
+                    </div>
+                  </div>
+                ) : (
+                  <Typographie size="h2" balise="h2" fontFamily="Cooper">
+                    {data.title}
+                  </Typographie>
+                )}
                 <Typographie
                   size="h5"
                   balise="h5"
@@ -188,9 +206,16 @@ export const Tarif = ({
                   </Typographie>
                 )}
               </div>
-              <Button variant="demi-link" icon="true" fontFamily="Courier">
-                {data.price}
-              </Button>
+              {/* <a href={data.stripeLink}>
+                <Button variant="demi-link" icon="true" fontFamily="Courier">
+                  {data.button}
+                </Button>
+              </a> */}
+              <Checkout
+                name={data.title ?? ""}
+                amount={data.stripeLink ?? 0}
+                id={data.id ?? 0}
+              />
             </div>
             <div className="border border-black img-pattern align-middle h-5 w-full" />
           </div>
