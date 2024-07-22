@@ -16,13 +16,13 @@ const Success = () => {
 
   useEffect(() => {
     //Redirige vers la page de succès après un certain délai
-    const timeout = setTimeout(() => {
-      router.push("/");
-    }, 30000);
-    return () => clearTimeout(timeout);
+    // const timeout = setTimeout(() => {
+    //   router.push("/");
+    // }, 30000);
+    // return () => clearTimeout(timeout);
   }, [router]);
   return (
-    <Container className="flex flex-col items-center justify-between mx-auto">
+    <Container className="flex flex-col items-center justify-between">
       <Menu>Axis Studio</Menu>
       <div className="flex flex-col gap-5 items-center justify-center py-10 max-w-[380px] mx-auto">
         <Image src="/svg/Arrow.svg" alt="" width={80} height={80} />
@@ -32,7 +32,7 @@ const Success = () => {
         </Typographie>
       </div>
       <Separator variant="double" />
-      <div className="flex flex-row items-center justify-between w-full align-middle bg-lightorange z-[-1] border p-2.5 border-dotted border-orange">
+      <div className="flex sm:flex-row flex-col sm:items-center items-start justify-between w-full align-middle gap-5 bg-lightorange z-[-1] border p-2.5 border-dotted border-orange">
         <div className="flex flex-col gap-5 items-start">
           <div className="flex flex-row items-center align-middle w-max gap-2">
             <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
@@ -48,11 +48,17 @@ const Success = () => {
             suivre son avancé
           </Typographie>
         </div>
-        <Button variant="button" icon="false" className="z-10">
-          Afficher le code
-        </Button>
+        <div className="flex flex-row justify-between items-center align-middle w-full">
+          <Button variant="button" icon="false" className="z-10">
+            Afficher le code
+          </Button>
+          <Typographie size="h5" balise="h5">
+            Redirection automatique dans{" "}
+            <span className="font-medium">30s</span>
+          </Typographie>
+        </div>
       </div>
-      <div className="absolute bottom-2">
+      <div className="sm:flex hidden absolute bottom-2">
         <Button variant="button" icon="true" isLoading>
           Redirection automatique dans <span className="font-medium">30s</span>
         </Button>

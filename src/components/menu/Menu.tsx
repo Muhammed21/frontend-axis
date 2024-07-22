@@ -165,7 +165,7 @@ export const Menu = ({
                 {children}
               </Typographie>
             </div>
-            <Separator variant="simple" border="large" />
+            <Separator variant="simple" border="fine" />
             <div className="flex flex-row w-max whitespace-nowrap gap-2.5 items-end justify-end align-middle">
               <Typographie
                 fontFamily="Cooper"
