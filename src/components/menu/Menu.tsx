@@ -53,11 +53,8 @@ export const Menu = ({
   return (
     <section className="flex flex-col gap-y-10 w-full items-center h-max">
       {table.map((data) => (
-        <div className="w-full">
-          <div
-            key={data.id}
-            className="sm:flex hidden w-full flex-row items-center align-middle relative gap-5"
-          >
+        <div key={data.id} className="w-full">
+          <div className="sm:flex hidden w-full flex-row items-center align-middle relative gap-5">
             <div className="flex w-max whitespace-nowrap">
               <Typographie
                 fontFamily="Courier"
