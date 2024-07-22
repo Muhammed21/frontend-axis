@@ -26,8 +26,14 @@ export default function Home() {
       <div className="flex flex-row items-center justify-between align-middle">
         <div className="flex flex-row items-center align-middle w-max gap-2">
           <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
-          <Typographie size="h4" balise="h4" className="cursor-e-resize">
-            <AnimatedText>Nous contacter par mail -:- </AnimatedText>
+          <Typographie
+            size="h4"
+            balise="h4"
+            className="cursor-e-resize flex flex-row"
+          >
+            <div className="sm:flex hidden">
+              <AnimatedText>Nous contacter par mail -:- </AnimatedText>
+            </div>
             <Button variant="link" icon="false">
               contact@axis-studio.fr
             </Button>

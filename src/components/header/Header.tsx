@@ -5,7 +5,7 @@ import AnimatedText from "../animated-text/animatedText";
 export const Header = () => {
   return (
     <section className="flex flex-row w-full items-center align-middle justify-between">
-      <div className="border border-gray/10 img-pattern w-[100px] h-[310px]"></div>
+      <div className="border border-gray/10 img-pattern sm:w-[100px] w-[50px] h-[310px]"></div>
       <div className="flex flex-col space-y-2.5 w-full max-w-[900px]">
         <div className="flex flex-row w-max gap-2 items-center align-middle">
           <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
@@ -23,7 +23,7 @@ export const Header = () => {
           achieve? Get an overview here.
         </Typographie>
       </div>
-      <div className="border border-gray/10 img-pattern w-[100px] h-[310px]"></div>
+      <div className="border border-gray/10 img-pattern sm:w-[100px] w-[50px] h-[310px]"></div>
     </section>
   );
 };

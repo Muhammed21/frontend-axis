@@ -49,7 +49,7 @@ export const Tarif = ({
   imgTop,
   populaire,
 }: Props) => {
-  const plan = { name: "Plan à 250€", amount: 250, id: 1 };
+  //const plan = { name: "Plan à 250€", amount: 250, id: 1 };
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [table, setTable] = useState<Props[]>([]);
@@ -88,12 +88,12 @@ export const Tarif = ({
           <AnimatedText>{children}</AnimatedText>
         </Typographie>
       </div>
-      <div className="flex flex-row w-full justify-between">
+      <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 w-full justify-between">
         {table.map((data, index) => (
           <div
             key={data.id}
             className={clsx(
-              "flex flex-col items-start max-w-[330px] w-full space-y-4 border-r px-4 border-black",
+              "flex flex-col items-start sm:max-w-[330px] w-full space-y-4 sm:border-r sm:px-4 px-0 border-black border-r-none",
               index === 0 && "pl-0",
               index === 3 && "border-none pr-0"
             )}
@@ -217,7 +217,7 @@ export const Tarif = ({
                 id={data.id ?? 0}
               />
             </div>
-            <div className="border border-black img-pattern align-middle h-5 w-full" />
+            <div className="sm:flex hidden border border-black img-pattern align-middle h-5 w-full" />
           </div>
         ))}
       </div>

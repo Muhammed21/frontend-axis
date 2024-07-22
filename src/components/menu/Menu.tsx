@@ -53,94 +53,184 @@ export const Menu = ({
   return (
     <section className="flex flex-col gap-y-10 w-full items-center h-max">
       {table.map((data) => (
-        <div
-          key={data.id}
-          className="flex w-full flex-row items-center align-middle relative gap-5"
-        >
-          <div className="flex w-max whitespace-nowrap">
-            <Typographie
-              fontFamily="Courier"
-              size="h4"
-              balise="h4"
-              theme="black"
-            >
-              {data.slogan}
-            </Typographie>
+        <div className="w-full">
+          <div
+            key={data.id}
+            className="sm:flex hidden w-full flex-row items-center align-middle relative gap-5"
+          >
+            <div className="flex w-max whitespace-nowrap">
+              <Typographie
+                fontFamily="Courier"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                {data.slogan}
+              </Typographie>
+            </div>
+            <hr className="flex-1 sm:mx-4 ml-0 mr-4 border-[0.7px] border-black" />
+            <div className="sm:absolute relative left-1/2 px-5 transform -translate-x-1/2 bg-white">
+              <Typographie
+                fontFamily="CooperLight"
+                size="h2"
+                balise="h2"
+                theme="black"
+                weight="light"
+              >
+                {children}
+              </Typographie>
+            </div>
+            <hr className="sm:flex-1 hidden sm:mx-4 ml-4 mr-0 border-[0.7px] border-black" />
+            <div className="sm:flex hidden w-max whitespace-nowrap gap-2.5 items-end justify-end align-middle">
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className="text-sm underline underline-from-left cursor-pointer underline-offset-2"
+              >
+                Medium
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                -
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+              >
+                Medium
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                -
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+              >
+                Medium
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                -
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+              >
+                Medium
+              </Typographie>
+            </div>
           </div>
-          <hr className="flex-1 mx-4 border-[0.7px] border-black" />
-          <div className="absolute left-1/2 px-5 transform -translate-x-1/2 bg-white">
-            <Typographie
-              fontFamily="CooperLight"
-              size="h2"
-              balise="h2"
-              theme="black"
-              weight="light"
-            >
-              {children}
-            </Typographie>
-          </div>
-          <hr className="flex-1 mx-4 border-[0.7px] border-black" />
-          <div className="flex w-max whitespace-nowrap gap-2.5 items-end justify-end align-middle">
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-              className="text-sm underline underline-from-left cursor-pointer underline-offset-2"
-            >
-              Medium
-            </Typographie>
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-            >
-              -
-            </Typographie>
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-              className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-            >
-              Medium
-            </Typographie>
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-            >
-              -
-            </Typographie>
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-              className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-            >
-              Medium
-            </Typographie>
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-            >
-              -
-            </Typographie>
-            <Typographie
-              fontFamily="Cooper"
-              size="h4"
-              balise="h4"
-              theme="black"
-              className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-            >
-              Medium
-            </Typographie>
+          {/* partie mobile */}
+          <div className="sm:hidden flex flex-col gap-5 w-full items-center">
+            <div className="flex w-max whitespace-nowrap">
+              <Typographie
+                fontFamily="Courier"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                {data.slogan}
+              </Typographie>
+            </div>
+            <Separator variant="simple" border="fine" />
+            <div className="relative">
+              <Typographie
+                fontFamily="CooperLight"
+                size="h2"
+                balise="h2"
+                theme="black"
+                weight="light"
+              >
+                {children}
+              </Typographie>
+            </div>
+            <Separator variant="simple" border="large" />
+            <div className="flex flex-row w-max whitespace-nowrap gap-2.5 items-end justify-end align-middle">
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className="text-sm underline underline-from-left cursor-pointer underline-offset-2"
+              >
+                Medium
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                -
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+              >
+                Medium
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                -
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+              >
+                Medium
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+              >
+                -
+              </Typographie>
+              <Typographie
+                fontFamily="Cooper"
+                size="h4"
+                balise="h4"
+                theme="black"
+                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+              >
+                Medium
+              </Typographie>
+            </div>
           </div>
         </div>
       ))}

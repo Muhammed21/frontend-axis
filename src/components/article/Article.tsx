@@ -71,14 +71,14 @@ export const Article = ({
           <AnimatedText>{children}</AnimatedText>
         </Typographie>
       </div>
-      <div className="flex flex-row">
+      <div className="flex sm:flex-row flex-col sm:gap-0 gap-8">
         {table.map((data, index) => (
           <div
             key={data.id}
             className={clsx(
-              "flex flex-col relative space-y-4 border-r border-black px-3 items-start justify-start w-full max-w-[330px] space-x-4",
+              "flex flex-col relative space-y-4 sm:border-r border-r-0 border-x-0 border border-b-1 border-t-0 pb-8 sm:pb-0 sm:border-b-0 border-black sm:px-3 px-0 items-start justify-start w-full sm:max-w-[330px] space-x-4",
               index === 0 && "pl-0",
-              index === 3 && "border-r-0"
+              index === 3 && "border-none pb-1"
             )}
           >
             <div className="flex relative flex-col items-start justify-between align-top h-max space-y-5">
@@ -100,7 +100,7 @@ export const Article = ({
                   size="h5"
                   balise="h5"
                   fontFamily="MaisonNeue"
-                  className=" w-full max-w-[295px] leading-5 text-black/85"
+                  className=" w-full sm:max-w-[295px] leading-5 text-black/85"
                 >
                   {data.content}
                 </Typographie>

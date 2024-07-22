@@ -22,7 +22,7 @@ export default async function handler(
 
     try {
       const session = await stripe.checkout.sessions.create({
-        payment_method_types: ["card"],
+        payment_method_types: ["card", "klarna", "link", "paypal"],
         line_items: [
           {
             price_data: {
@@ -41,8 +41,10 @@ export default async function handler(
           planId: id,
         },
         mode: "payment",
-        success_url: `${req.headers.origin}/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `${req.headers.origin}/cancel/cancel`,
+        // expires_at: 30,
+        // allow_promotion_codes: true,
+        success_url: `${req.headers.origin}/success/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${req.headers.origin}`, //URL: /cancel/cancel
       });
 
       res.status(200).json({ id: session.id });
