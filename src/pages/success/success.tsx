@@ -16,10 +16,10 @@ const Success = () => {
 
   useEffect(() => {
     //Redirige vers la page de succès après un certain délai
-    // const timeout = setTimeout(() => {
-    //   router.push("/");
-    // }, 30000);
-    // return () => clearTimeout(timeout);
+    const timeout = setTimeout(() => {
+      router.push("/");
+    }, 30000);
+    return () => clearTimeout(timeout);
   }, [router]);
   return (
     <Container className="flex flex-col items-center justify-between">

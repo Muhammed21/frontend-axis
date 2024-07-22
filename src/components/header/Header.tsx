@@ -29,11 +29,9 @@ export const Header = () => {
           achieve? Get an overview here.
         </Typographie>
         <Typographie
-          size="h3"
-          balise="h3"
           theme="black"
           weight="light"
-          className="sm:hidden flex"
+          className="sm:hidden flex text-[19px]"
         >
           What are icons? What are their benefits and what are they used to
           achieve? Get an overview here.
