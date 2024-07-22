@@ -25,21 +25,21 @@ const Success = () => {
     <Container className="flex flex-col items-center justify-between">
       <Menu>Axis Studio</Menu>
       <div className="flex flex-col gap-5 items-center justify-center py-10 max-w-[380px] mx-auto">
-        <Image src="/svg/Arrow.svg" alt="" width={80} height={80} />
+        <Image src="/svg/Arrow.svg" alt="" width={50} height={50} />
         <Typographie className="text-center">
           Votre transaction à bien été prise en compte. Un mail contenant un
           devis détaillé vous parviendra.
         </Typographie>
       </div>
       <Separator variant="double" />
-      <div className="flex sm:flex-row flex-col sm:items-center items-start justify-between w-full align-middle gap-5 bg-lightorange z-[-1] border p-2.5 border-dotted border-orange">
+      <div className="flex sm:flex-row flex-col sm:items-center items-start justify-between w-full align-middle gap-5 bg-lightorange z-[-10] border p-2.5 border-dotted border-orange">
         <div className="flex flex-col gap-5 items-start">
           <div className="flex flex-row items-center align-middle w-max gap-2">
             <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
             <Typographie size="h4" balise="h4" className="cursor-e-resize z-10">
-              <AnimatedText>Voici votre numéro de dossier -:- </AnimatedText>
+              <AnimatedText>Votre numéro de dossier -:- </AnimatedText>
               <Button variant="link" icon="false">
-                <span className="font-medium">n°1254329</span>
+                <span className="font-medium z-10">n°1254329</span>
               </Button>
             </Typographie>
           </div>
@@ -48,15 +48,9 @@ const Success = () => {
             suivre son avancé
           </Typographie>
         </div>
-        <div className="flex flex-row justify-between items-center align-middle w-full">
-          <Button variant="button" icon="false" className="z-10">
-            Afficher le code
-          </Button>
-          <Typographie size="h5" balise="h5">
-            Redirection automatique dans{" "}
-            <span className="font-medium">30s</span>
-          </Typographie>
-        </div>
+        <Button variant="button" icon="false" className="z-10">
+          Afficher le code
+        </Button>
       </div>
       <div className="sm:flex hidden absolute bottom-2">
         <Button variant="button" icon="true" isLoading>

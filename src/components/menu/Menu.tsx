@@ -73,8 +73,10 @@ export const Menu = ({
                 balise="h2"
                 theme="black"
                 weight="light"
+                className="flex"
               >
                 {children}
+                <span className="text-h4">®</span>
               </Typographie>
             </div>
             <hr className="sm:flex-1 hidden sm:mx-4 ml-4 mr-0 border-[0.7px] border-black" />
@@ -161,8 +163,10 @@ export const Menu = ({
                 balise="h2"
                 theme="black"
                 weight="light"
+                className="flex"
               >
                 {children}
+                <span className="text-h3">®</span>
               </Typographie>
             </div>
             <Separator variant="simple" border="fine" />
