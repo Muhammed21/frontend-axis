@@ -21,5 +21,6 @@ export default function App({ Component, pageProps }: AppProps) {
       lenis.destroy();
     };
   }, []);
+
   return <Component {...pageProps} />;
 }

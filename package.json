@@ -11,12 +11,15 @@
   "dependencies": {
     "@react-three/drei": "^9.108.3",
     "@react-three/fiber": "^8.16.8",
+    "@rive-app/canvas": "^2.19.4",
+    "@rive-app/react-canvas": "^4.13.3",
     "@stripe/react-stripe-js": "^2.7.3",
     "@stripe/stripe-js": "^4.1.0",
     "@studio-freight/lenis": "^1.0.42",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.2",
+    "js-cookie": "^3.0.5",
     "lucide-react": "^0.400.0",
     "next": "^14.2.4",
     "react": "^18",
@@ -28,6 +31,7 @@
     "three-globe": "^2.31.1"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

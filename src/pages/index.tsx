@@ -12,6 +12,7 @@ import { Article } from "@/components/article/Article";
 import { Tarif } from "@/components/tarif/Tarif";
 import { Fonctionnalite } from "@/components/fonctionnalite/Fonctionnalite";
 import Checkout from "@/components/buyButton/buyButton";
+import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
 
 const inter = Inter({ subsets: ["latin"] });
 
