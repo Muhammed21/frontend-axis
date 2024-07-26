@@ -30,9 +30,9 @@ export const Separator = ({ variant = "simple", border = "fine" }: Props) => {
   }
 
   return (
-    <section className="w-full z-[-1]">
+    <section className="w-full">
       {variant === "simple" ? (
-        <hr className={clsx(variantStyles, borderStyles, "z-[-1]")} />
+        <hr className={clsx(variantStyles, borderStyles, "")} />
       ) : (
         <div className="flex flex-col w-full gap-y-2">
           <hr className="border border-1 border-black " />

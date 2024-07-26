@@ -48,18 +48,23 @@ const Success = ({ sessionId }: Props) => {
       const planId = await fetchSessionData();
       if (planId) {
         let numero = Cookies.get("dossierNumero");
-        if (!numero || Cookies.get("planId") !== planId) {
-          resetDossierNumero();
+        const savedPlanId = Cookies.get("planId");
+        if (!numero || savedPlanId !== planId) {
+          // Si le cookie a expiré ou le planId a changé, rediriger vers la page 404
+          router.push("/404");
         } else {
           console.log("Numéro de dossier récupéré des cookies:", numero);
           setDossierNumero(numero);
         }
+      } else {
+        // Si planId n'est pas disponible, rediriger vers la page 404
+        router.push("/404");
       }
     };
 
     initializeDossierNumero();
 
-    //Redirige vers la page de succès après un certain délai
+    // Redirige vers la page de succès après un certain délai
     // const timeout = setTimeout(() => {
     //   router.push("/");
     // }, 30000);

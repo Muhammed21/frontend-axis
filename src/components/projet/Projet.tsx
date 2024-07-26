@@ -4,6 +4,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import AnimatedText from "../animated-text/animatedText";
+import Link from "next/link";
 
 interface Props {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ interface Props {
 }
 
 const PROJET_URL = "/api/projet";
+
+const ROUTE = process.env.NEXT_PUBLIC_ROUTE;
 
 export const Projet = ({
   children,
@@ -99,14 +102,16 @@ export const Projet = ({
                   {data.content}
                 </Typographie>
               </div>
-              <Button
-                fontFamily="Courier"
-                variant="demi-link"
-                icon="true"
-                className=""
-              >
-                {data.button}
-              </Button>
+              <Link href={`${ROUTE}/projet/${data.id}`} key={data.id}>
+                <Button
+                  fontFamily="Courier"
+                  variant="demi-link"
+                  icon="true"
+                  className=""
+                >
+                  {data.button}
+                </Button>
+              </Link>
             </div>
           </div>
         ))}

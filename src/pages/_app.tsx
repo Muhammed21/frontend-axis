@@ -2,8 +2,9 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
+import { AnimatePresence } from "framer-motion";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2, // Ajustez cette valeur pour différentes vitesses de défilement
@@ -22,5 +23,9 @@ export default function App({ Component, pageProps }: AppProps) {
     };
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <AnimatePresence mode="wait">
+      <Component key={router.route} {...pageProps} />
+    </AnimatePresence>
+  );
 }

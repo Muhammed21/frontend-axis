@@ -131,7 +131,7 @@ export const Fonctionnalite = ({ children }: Props) => {
         </div>
         {/* partie de droite */}
         <div className="flex relative sm:flex-col pt-5 sm:pt-0 flex-row gap-14 items-center justify-center">
-          <div className="absolute sm:flex hidden left-3.5 border-l-[1.5px] z-[-1] border-gray/40 w-[1px] h-[80%]" />
+          <div className="absolute sm:flex hidden left-3.5 border-l-[1.5px] z-[1] border-gray/40 w-[1px] h-[80%]" />
           <hr className="absolute sm:hidden flex w-full border-[1px] border-gray/40" />
           <div className="flex flex-row gap-14 items-center justify-start z-10">
             {/* <div className="bg-[#535353] p-1.5 rounded-full items-center cursor-pointer">

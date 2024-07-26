@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { Typographie } from "@/design-system/typographie/Typographie";
 import { Button } from "@/design-system/button/Button";
 import { Separator } from "../separator/Separator";
+import Link from "next/link";
 
 const HEADER_URL = "/api/proxy";
 
@@ -115,15 +116,17 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Typographie
-                fontFamily="Cooper"
-                size="h4"
-                balise="h4"
-                theme="black"
-                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-              >
-                Medium
-              </Typographie>
+              <Link href="/" className="h-[20px]">
+                <Typographie
+                  fontFamily="Cooper"
+                  size="h4"
+                  balise="h4"
+                  theme="black"
+                  className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+                >
+                  Medium
+                </Typographie>
+              </Link>
               <Typographie
                 fontFamily="Cooper"
                 size="h4"
@@ -132,15 +135,17 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Typographie
-                fontFamily="Cooper"
-                size="h4"
-                balise="h4"
-                theme="black"
-                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-              >
-                Medium
-              </Typographie>
+              <Link href="/projet/1" className="h-[20px]">
+                <Typographie
+                  fontFamily="Cooper"
+                  size="h4"
+                  balise="h4"
+                  theme="black"
+                  className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+                >
+                  Medium
+                </Typographie>
+              </Link>
             </div>
           </div>
           {/* partie mobile */}
@@ -205,15 +210,17 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Typographie
-                fontFamily="Cooper"
-                size="h4"
-                balise="h4"
-                theme="black"
-                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-              >
-                Medium
-              </Typographie>
+              <Link href="/" className="h-[20px]">
+                <Typographie
+                  fontFamily="Cooper"
+                  size="h4"
+                  balise="h4"
+                  theme="black"
+                  className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+                >
+                  Medium
+                </Typographie>
+              </Link>
               <Typographie
                 fontFamily="Cooper"
                 size="h4"
@@ -222,15 +229,17 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Typographie
-                fontFamily="Cooper"
-                size="h4"
-                balise="h4"
-                theme="black"
-                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-              >
-                Medium
-              </Typographie>
+              <Link href="/projet/1" className="h-[20px]">
+                <Typographie
+                  fontFamily="Cooper"
+                  size="h4"
+                  balise="h4"
+                  theme="black"
+                  className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+                >
+                  Medium
+                </Typographie>
+              </Link>
             </div>
           </div>
         </div>
@@ -238,7 +247,7 @@ export const Menu = ({
       {table.map((data) => (
         <div
           key={data.id}
-          className="relative flex w-full items-center justify-center align-middle"
+          className="relative flex w-full pb-4 items-center justify-center align-middle"
         >
           <Separator variant="simple" border="large" />
           <div className="absolute bg-white z-10">
