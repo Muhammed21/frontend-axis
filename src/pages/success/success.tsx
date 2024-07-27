@@ -52,7 +52,12 @@ const Success = ({ sessionId }: Props) => {
     <Container className="flex flex-col items-center justify-between">
       <Menu>Axis Studio</Menu>
       <div className="flex flex-col gap-5 items-center justify-center py-10 max-w-[380px] mx-auto">
-        <Image src="/svg/Arrow.svg" alt="" width={50} height={50} />
+        <Image
+          src="/webp/system-regular-70-ticket-1.webp"
+          alt=""
+          width={60}
+          height={60}
+        />
         <Typographie className="text-center">
           Votre transaction a bien été prise en compte. Un mail contenant un
           devis détaillé vous parviendra.
