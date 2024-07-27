@@ -28,7 +28,7 @@ export default function Home() {
         <Menu>Axis Studio</Menu>
         <Header />
         <Separator variant="simple" border="large" />
-        <div className="flex flex-row items-center justify-between align-middle">
+        <div className="flex flex-row relative z-10 items-center justify-between align-middle">
           <div className="flex flex-row items-center align-middle w-max gap-2">
             <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
             <Typographie

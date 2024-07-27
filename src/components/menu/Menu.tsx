@@ -52,7 +52,7 @@ export const Menu = ({
   }, [page]);
 
   return (
-    <section className="flex flex-col gap-y-10 w-full items-center h-max">
+    <section className="relative z-10 flex flex-col gap-y-10 w-full items-center h-max">
       {table.map((data) => (
         <div key={data.id} className="w-full">
           <div className="sm:flex hidden w-full flex-row items-center align-middle relative gap-5">
@@ -229,7 +229,7 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Link href="/projet/1" className="h-[20px]">
+              <Link href="/projet/1" className="h-[20px] z-30">
                 <Typographie
                   fontFamily="Cooper"
                   size="h4"

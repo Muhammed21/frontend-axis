@@ -28,47 +28,24 @@ const Success = ({ sessionId }: Props) => {
       return Math.floor(100000 + Math.random() * 900000).toString();
     };
 
-    const setNumeroDossierCookie = (numero: any) => {
-      Cookies.set("dossierNumero", numero, { expires: 5 / 1440 }); // 5 minutes
-      console.log("Numéro de dossier enregistré dans les cookies:", numero);
-      console.log("Cookies actuels:", Cookies.get());
-    };
-
-    const resetDossierNumero = async () => {
-      const planId = await fetchSessionData();
-      if (planId) {
-        const numero = generateNumeroDossier();
-        setNumeroDossierCookie(numero);
-        setDossierNumero(numero);
-        Cookies.set("planId", planId, { expires: 5 / 1440 }); // 5 minutes
-      }
-    };
-
     const initializeDossierNumero = async () => {
       const planId = await fetchSessionData();
       if (planId) {
+        // Vérifiez si un numéro de dossier est déjà stocké pour cette session
         let numero = Cookies.get("dossierNumero");
         const savedPlanId = Cookies.get("planId");
-        if (!numero || savedPlanId !== planId) {
-          // Si le cookie a expiré ou le planId a changé, rediriger vers la page 404
-          router.push("/404");
-        } else {
-          console.log("Numéro de dossier récupéré des cookies:", numero);
-          setDossierNumero(numero);
+
+        if (!numero || savedPlanId !== sessionId) {
+          // Si le numéro n'existe pas ou le planId a changé, générez un nouveau numéro
+          numero = generateNumeroDossier();
+          Cookies.set("dossierNumero", numero, { expires: 7 }); // Stockez le numéro de dossier pour 7 jours
+          Cookies.set("planId", sessionId, { expires: 7 }); // Stockez le planId pour 7 jours
         }
-      } else {
-        // Si planId n'est pas disponible, rediriger vers la page 404
-        router.push("/404");
+        setDossierNumero(numero);
       }
     };
 
     initializeDossierNumero();
-
-    // Redirige vers la page de succès après un certain délai
-    // const timeout = setTimeout(() => {
-    //   router.push("/");
-    // }, 30000);
-    // return () => clearTimeout(timeout);
   }, [router, sessionId]);
 
   return (

@@ -10,7 +10,7 @@ import Inner from "../layout/inner";
 
 const SingleProjet = ({ title, content, button, img }: any) => {
   return (
-    <Container>
+    <Container className="relative z-10">
       <Head>
         <title>{title}</title>
       </Head>

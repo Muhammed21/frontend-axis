@@ -47,7 +47,7 @@
     transform: scaleX(1);
     transform-origin: bottom left;
     transition: transform 0.2s ease-out;
-    z-index: -1; /* Put the underline behind the text */
+    z-index: 1; /* Put the underline behind the text */
   }
 
   .underline-from-left-projet:hover::after {
@@ -73,7 +73,7 @@
     transform: scaleX(0);
     transform-origin: bottom left;
     transition: transform 0.2s ease-out;
-    z-index: -1; /* Put the underline behind the text */
+    z-index: 1; /* Put the underline behind the text */
   }
 
   .underline-from-left-disable:hover::after {
