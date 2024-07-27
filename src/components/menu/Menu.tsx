@@ -52,7 +52,7 @@ export const Menu = ({
   }, [page]);
 
   return (
-    <section className="relative z-10 flex flex-col gap-y-10 w-full items-center h-max">
+    <section className="relative z-10 flex flex-col gap-y-10 w-full items-center h-max pt-8">
       {table.map((data) => (
         <div key={data.id} className="w-full">
           <div className="sm:flex hidden w-full flex-row items-center align-middle relative gap-5">
@@ -99,15 +99,17 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Typographie
-                fontFamily="Cooper"
-                size="h4"
-                balise="h4"
-                theme="black"
-                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-              >
-                Medium
-              </Typographie>
+              <Link href="/projet/2" className="h-[20px]">
+                <Typographie
+                  fontFamily="Cooper"
+                  size="h4"
+                  balise="h4"
+                  theme="black"
+                  className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+                >
+                  Medium
+                </Typographie>
+              </Link>
               <Typographie
                 fontFamily="Cooper"
                 size="h4"
@@ -193,15 +195,17 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Typographie
-                fontFamily="Cooper"
-                size="h4"
-                balise="h4"
-                theme="black"
-                className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
-              >
-                Medium
-              </Typographie>
+              <Link href="/projet/2" className="h-[20px]">
+                <Typographie
+                  fontFamily="Cooper"
+                  size="h4"
+                  balise="h4"
+                  theme="black"
+                  className={`text-sm underline underline-from-left cursor-pointer underline-offset-2`}
+                >
+                  Medium
+                </Typographie>
+              </Link>
               <Typographie
                 fontFamily="Cooper"
                 size="h4"

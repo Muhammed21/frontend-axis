@@ -19,7 +19,19 @@ export default function Single({ post }) {
   const data = post.find((item) => item.id.toString() === id);
   console.log(data);
 
-  return <Inner>{data ? <SingleProjet title={data.title} /> : ""}</Inner>;
+  if (!data) {
+    return (
+      <div>
+        <SingleProjet title="Accueil" />
+      </div>
+    );
+  }
+
+  return (
+    <div>
+      <SingleProjet title={data.title} />
+    </div>
+  );
 }
 
 export async function getServerSideProps({ params }) {

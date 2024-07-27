@@ -24,8 +24,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
   }, []);
 
   return (
-    <AnimatePresence mode="wait">
-      <Component key={router.route} {...pageProps} />
-    </AnimatePresence>
+    <div className="pb-8">
+      <AnimatePresence mode="wait">
+        <Component key={router.route} {...pageProps} />
+      </AnimatePresence>
+    </div>
   );
 }
