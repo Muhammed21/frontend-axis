@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import AnimatedText from "../animated-text/animatedText";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface Props {
   children: React.ReactNode;
@@ -13,6 +14,7 @@ interface Props {
   title?: String;
   content?: String;
   button?: String;
+  data?: String;
 }
 
 const PROJET_URL = "/api/projet";
@@ -26,11 +28,14 @@ export const Projet = ({
   title,
   content,
   button,
+  data,
 }: Props) => {
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
   const [table, setTable] = useState<Props[]>([]);
   const [page, setPage] = useState(0);
+
+  const router = useRouter();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -53,7 +58,7 @@ export const Projet = ({
   }, [page]);
 
   return (
-    <section className="flex flex-col space-y-5">
+    <section className="flex flex-col space-y-5 relative z-20">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
         <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
         <Typographie
@@ -102,13 +107,8 @@ export const Projet = ({
                   {data.content}
                 </Typographie>
               </div>
-              <Link href={`${ROUTE}/projet/${data.id}`} key={data.id}>
-                <Button
-                  fontFamily="Courier"
-                  variant="demi-link"
-                  icon="true"
-                  className=""
-                >
+              <Link href={`${ROUTE}/projet/${data.id}`}>
+                <Button fontFamily="Courier" variant="demi-link" icon="true">
                   {data.button}
                 </Button>
               </Link>

@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import Lenis from "@studio-freight/lenis";
+import { motion } from "framer-motion";
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
 

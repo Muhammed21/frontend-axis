@@ -51,9 +51,9 @@ const Success = ({ sessionId }: Props) => {
   return (
     <Container className="flex flex-col items-center justify-between">
       <Menu>Axis Studio</Menu>
-      <div className="flex flex-col gap-5 items-center justify-center py-10 max-w-[380px] mx-auto">
+      <div className="flex flex-col gap-5 items-center justify-center py-5 max-w-[380px] mx-auto">
         <Image
-          src="/webp/system-regular-70-ticket-1.webp"
+          src="/webp/system-regular-76-newspaper.webp"
           alt=""
           width={60}
           height={60}

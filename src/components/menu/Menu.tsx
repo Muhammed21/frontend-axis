@@ -7,6 +7,8 @@ import Link from "next/link";
 
 const HEADER_URL = "/api/proxy";
 
+const ROUTE = process.env.NEXT_PUBLIC_ROUTE;
+
 interface Props {
   id?: number;
   slogan?: string;
@@ -99,7 +101,7 @@ export const Menu = ({
               >
                 -
               </Typographie>
-              <Link href="/projet/2" className="h-[20px]">
+              <Link href={`${ROUTE}/projet/${data.id}`} className="h-[20px]">
                 <Typographie
                   fontFamily="Cooper"
                   size="h4"

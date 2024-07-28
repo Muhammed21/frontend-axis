@@ -9,7 +9,7 @@ export const perspective = {
   },
   exit: {
     scale: 0.9,
-    y: -150,
+    y: 150,
     opacity: 0.5,
     transition: {
       duration: 1.2,
