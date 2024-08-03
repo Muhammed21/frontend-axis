@@ -6,7 +6,7 @@ import { Button } from "@/design-system/button/Button";
 import { Typographie } from "@/design-system/typographie/Typographie";
 import AnimatedText from "@/components/animated-text/animatedText";
 import Image from "next/image";
-import Inner from "../layout/inner";
+import Inner from "../layout/inner/index";
 
 const SingleProjet = ({ title, content, button, img }: any) => {
   return (
@@ -16,7 +16,7 @@ const SingleProjet = ({ title, content, button, img }: any) => {
           <title>{title}</title>
         </Head>
         <Menu>{title}</Menu>
-        <div className="flex flex-row items-center justify-between align-middle">
+        {/* <div className="flex flex-row items-center justify-between align-middle">
           <div className="flex flex-row items-center align-middle w-max gap-2">
             <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
             <Typographie
@@ -35,8 +35,8 @@ const SingleProjet = ({ title, content, button, img }: any) => {
           <Button variant="button" icon="false">
             Planifier un appel
           </Button>
-        </div>
-        <Separator variant="double" />
+        </div> */}
+        {/* <Separator variant="double" /> */}
         <div className="max-w-[1320px] flex flex-col gap-5 relative w-full">
           <div className="flex flex-row w-max gap-2 items-center align-middle">
             <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />

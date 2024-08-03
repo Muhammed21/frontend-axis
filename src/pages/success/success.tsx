@@ -16,6 +16,7 @@ interface Props {
 const Success = ({ sessionId }: Props) => {
   const router = useRouter();
   const [dossierNumero, setDossierNumero] = useState("");
+  const [timer, setTimer] = useState(10);
 
   useEffect(() => {
     const fetchSessionData = async () => {
@@ -46,7 +47,27 @@ const Success = ({ sessionId }: Props) => {
     };
 
     initializeDossierNumero();
-  }, [router, sessionId]);
+
+    const countdown = setInterval(() => {
+      setTimer((prevTimer) => prevTimer - 1);
+    }, 1000);
+
+    const redirectAndDeleteSession = async () => {
+      // Supprimez la session de la base de données
+      // await fetch(`/api/delete-session?session_id=${sessionId}`, {
+      //   method: "DELETE",
+      // });
+
+      // Redirigez vers la page d'accueil
+      router.push("/");
+    };
+
+    if (timer === 0) {
+      redirectAndDeleteSession();
+    }
+
+    return () => clearInterval(countdown);
+  }, [router, sessionId, timer]);
 
   return (
     <Container className="flex flex-col items-center justify-between">
@@ -81,12 +102,13 @@ const Success = ({ sessionId }: Props) => {
           </Typographie>
         </div>
         <Button variant="button" icon="false" className="z-10">
-          Afficher le code
+          Suivre mon dossier
         </Button>
       </div>
       <div className="sm:flex hidden absolute bottom-2">
         <Button variant="button" icon="true" isLoading>
-          Redirection automatique dans <span className="font-medium">30s</span>
+          Redirection automatique dans{" "}
+          <span className="font-medium">{timer}s</span>
         </Button>
       </div>
     </Container>
@@ -95,6 +117,24 @@ const Success = ({ sessionId }: Props) => {
 
 export async function getServerSideProps(context: any) {
   const { session_id } = context.query;
+
+  // Vérifiez si l'ID de session est valide
+  if (!session_id) {
+    return {
+      notFound: true, // Retourne une page 404 si session_id n'est pas défini
+    };
+  }
+
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/get-session?session_id=${session_id}`
+  );
+  const session = await res.json();
+
+  if (!session || !session.metadata) {
+    return {
+      notFound: true, // Retourne une page 404 si la session est introuvable ou invalide
+    };
+  }
 
   return {
     props: {

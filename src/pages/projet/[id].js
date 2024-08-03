@@ -8,7 +8,6 @@ import { Container } from "@/components/container/Container";
 import { Button } from "@/design-system/button/Button";
 import { Typographie } from "@/design-system/typographie/Typographie";
 import SingleProjet from "@/components/projet/SingleProjet";
-import Inner from "../../components/layout/inner";
 // import { SinlgeProduct } from "../../components/projet/SingleProjet";
 
 export default function Single({ post }) {
