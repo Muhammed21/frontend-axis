@@ -21,7 +21,55 @@ const inter = Inter({ subsets: ["latin"] });
 
 const plan = { name: "Plan à 250€", amount: 1050, id: 1 }; // Exemple de plan, adaptez selon vos besoins
 
+const HEADER_URL = "/api/proxy";
+
+const ROUTE = process.env.NEXT_PUBLIC_ROUTE;
+
+interface Props {
+  id?: number;
+  slogan?: string;
+  brand?: string;
+  at?: string;
+  header?: string;
+  mail?: string;
+  children?: React.ReactNode;
+}
+
 export default function Home() {
+  const [error, setError] = useState();
+  const [isLoading, setIsLoading] = useState(false);
+  const [table, setTable] = useState<Props[]>([]);
+  const [page, setPage] = useState(0);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      setIsLoading(true);
+      try {
+        const res = await fetch(`${HEADER_URL}?page=${page}`);
+        if (!res.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const table = (await res.json()) as Props[];
+        setTable(table);
+      } catch (e: any) {
+        setError(e);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchPosts();
+  }, [page]);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-screen items-center w-auto justify-center">
+        <Button icon="true" isLoading variant="button">
+          Chargement en cours
+        </Button>
+      </div>
+    );
+  }
   return (
     <Inner>
       <Container>

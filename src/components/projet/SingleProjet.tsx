@@ -7,6 +7,8 @@ import { Typographie } from "@/design-system/typographie/Typographie";
 import AnimatedText from "@/components/animated-text/animatedText";
 import Image from "next/image";
 import Inner from "../layout/inner/index";
+import { Option } from "./Option";
+import { Projet } from "./Projet";
 
 const SingleProjet = ({ title, content, button, img }: any) => {
   return (
@@ -50,13 +52,28 @@ const SingleProjet = ({ title, content, button, img }: any) => {
             </Typographie>
           </div>
           <Image
-            src="/images/article-grid.png"
+            src="/images/projet-img.png"
             alt=""
             width={1320}
             height={425}
             className=""
           />
         </div>
+        <Separator variant="simple" border="fine" />
+        <div className="flex flex-row w-max gap-2 items-center align-middle">
+          <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
+          <Typographie
+            size="h4"
+            balise="h4"
+            fontFamily="Courier"
+            className="cursor-s-resize"
+          >
+            <AnimatedText>Toute les options choisies</AnimatedText>
+          </Typographie>
+        </div>
+        <Option />
+        <Separator variant="double" />
+        <Projet>Nos autres projets</Projet>
       </Container>
     </Inner>
   );

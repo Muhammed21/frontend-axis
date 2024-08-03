@@ -21,7 +21,7 @@ export default function Single({ post }) {
   if (!data) {
     return (
       <div>
-        <SingleProjet title="Accueil" />
+        <SingleProjet title="Axis Studio" />
       </div>
     );
   }
