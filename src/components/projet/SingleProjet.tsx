@@ -17,7 +17,9 @@ const SingleProjet = ({ title, content, button, img }: any) => {
         <Head>
           <title>{title}</title>
         </Head>
-        <Menu>{title}</Menu>
+        <Menu at="Prendre comme exemple" link="/">
+          {title}
+        </Menu>
         {/* <div className="flex flex-row items-center justify-between align-middle">
           <div className="flex flex-row items-center align-middle w-max gap-2">
             <Image src="/svg/Arrow.svg" width={22} height={22} alt="" />
@@ -48,18 +50,18 @@ const SingleProjet = ({ title, content, button, img }: any) => {
               fontFamily="Courier"
               className="cursor-s-resize"
             >
-              <AnimatedText>Toute les images du projets</AnimatedText>
+              <AnimatedText>Les visuelles du projets</AnimatedText>
             </Typographie>
           </div>
-          <Image
-            src="/images/projet-img.png"
+          {/* <Image
+            src="/images/article-grid.png"
             alt=""
             width={1320}
             height={425}
             className=""
-          />
+          /> */}
         </div>
-        <Separator variant="simple" border="fine" />
+        <Separator variant="projet" />
         <div className="flex flex-row w-max gap-2 items-center align-middle">
           <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
           <Typographie
@@ -68,7 +70,7 @@ const SingleProjet = ({ title, content, button, img }: any) => {
             fontFamily="Courier"
             className="cursor-s-resize"
           >
-            <AnimatedText>Toute les options choisies</AnimatedText>
+            <AnimatedText>Les options choisies</AnimatedText>
           </Typographie>
         </div>
         <Option />

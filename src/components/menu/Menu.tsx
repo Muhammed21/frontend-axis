@@ -16,6 +16,7 @@ interface Props {
   at?: string;
   header?: string;
   mail?: string;
+  link?: string;
   children?: React.ReactNode;
 }
 
@@ -27,6 +28,7 @@ export const Menu = ({
   header,
   mail,
   children,
+  link,
 }: Props) => {
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(false);
@@ -263,7 +265,7 @@ export const Menu = ({
               icon="false"
               fontFamily="Cooper"
             >
-              {data.at}
+              {link && <Link href={link}>{at}</Link>}
             </Button>
           </div>
         </div>

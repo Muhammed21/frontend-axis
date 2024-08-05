@@ -73,7 +73,9 @@ export default function Home() {
   return (
     <Inner>
       <Container>
-        <Menu>Axis Studio</Menu>
+        <Menu at="Suivre mon dossier" link="./folderSearch/FolderSearch">
+          Axis Studio
+        </Menu>
         <Header />
         <Separator variant="simple" border="large" />
         <div className="flex flex-row relative z-10 items-center justify-between align-middle">
@@ -88,7 +90,7 @@ export default function Home() {
                 <AnimatedText>Nous contacter par mail -:- </AnimatedText>
               </div>
               <Button variant="link" icon="false">
-                contact@axis-studio.fr
+                <a href="mailto:mcavus048@gmail.com">contact@axis-studio.fr</a>
               </Button>
             </Typographie>
           </div>
@@ -104,6 +106,41 @@ export default function Home() {
         <Article>Pourquoi nous choisir ?</Article>
         <Separator variant="simple" border="fine" />
         <Tarif>Des tarifs simples et transparents</Tarif>
+        <Separator variant="double" />
+        {/* <Image src="/images/phosphor.png" alt="" width={1320} height={215} /> */}
+        <div className="flex flex-col items-center mx-auto w-full">
+          <Typographie size="h4">
+            Truster by the{" "}
+            <span className="bg-[#37373724] py-0.5 px-1 rounded-md">
+              fatest
+            </span>{" "}
+            growing B2B companies
+          </Typographie>
+          <div className="flex flex-row items-center justify-center gap-2">
+            <Image
+              src="/svg/WTTJ.svg"
+              width={130}
+              height={50}
+              alt=""
+              className="grayscale"
+            />
+            <Image
+              src="/svg/SB.svg"
+              width={130}
+              height={50}
+              alt=""
+              className="grayscale"
+            />
+            <Image
+              src="/svg/contentsquare-seeklogo.svg"
+              width={130}
+              height={50}
+              alt=""
+              className="grayscale"
+            />
+          </div>
+        </div>
+        <Separator variant="double" />
       </Container>
     </Inner>
   );

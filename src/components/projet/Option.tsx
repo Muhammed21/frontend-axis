@@ -5,9 +5,9 @@ interface Props {}
 
 export const Option = () => {
   return (
-    <section className="relative flex lg:flex-row gap-6 lg:gap-0 lg:items-baseline items-center flex-col justify-between w-full">
-      <div className="flex flex-col gap-6 items-baseline">
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+    <section className="relative flex lg:flex-row gap-4 lg:gap-0 lg:items-baseline items-center flex-col justify-between w-full">
+      <div className="flex flex-col md:gap-3 gap-4 items-baseline">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -15,6 +15,7 @@ export const Option = () => {
             >
               Logo
             </Typographie>
+
             <Typographie
               size="h5"
               balise="h5"
@@ -25,7 +26,7 @@ export const Option = () => {
               un tunnel de vente
             </Typographie>
           </div>
-          <div className="flex flex-col gap-3">
+          {/* <div className="flex flex-col gap-3">
             <Typographie
               size="h4"
               balise="h4"
@@ -68,10 +69,10 @@ export const Option = () => {
               />
               Design sur mesure
             </Typographie>
-          </div>
+          </div> */}
         </div>
         {/* Deuxieme options */}
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -91,8 +92,8 @@ export const Option = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-6 items-baseline">
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+      <div className="flex flex-col md:gap-3 gap-4 items-baseline">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -110,7 +111,7 @@ export const Option = () => {
               un tunnel de vente
             </Typographie>
           </div>
-          <div className="flex flex-col gap-3">
+          {/* <div className="flex flex-col gap-3">
             <Typographie
               size="h4"
               balise="h4"
@@ -153,10 +154,10 @@ export const Option = () => {
               />
               Design sur mesure
             </Typographie>
-          </div>
+          </div> */}
         </div>
         {/* Deuxieme options */}
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -177,8 +178,8 @@ export const Option = () => {
         </div>
       </div>
       {/* troisieme colonne */}
-      <div className="flex flex-col gap-6 items-baseline">
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+      <div className="flex flex-col md:gap-3 gap-4 items-baseline">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -198,7 +199,7 @@ export const Option = () => {
           </div>
         </div>
         {/* Deuxieme options */}
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -219,8 +220,8 @@ export const Option = () => {
         </div>
       </div>
       {/* Quatrieme colonne */}
-      <div className="flex flex-col gap-6 items-baseline">
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+      <div className="flex flex-col md:gap-3 gap-4 items-baseline">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2">
             <Typographie
               fontFamily="CooperLight"
@@ -240,7 +241,7 @@ export const Option = () => {
           </div>
         </div>
         {/* Deuxieme options */}
-        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[310px] w-full h-max">
+        <div className=" flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max">
           <div className="flex flex-col gap-2 w-full h-max">
             <Typographie
               fontFamily="CooperLight"
