@@ -15,7 +15,9 @@ import Inner from "@/components/layout/inner/index";
 import Checkout from "@/components/buyButton/buyButton";
 import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
 import { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import page from "./helper/page";
+import InfiniteCarousel from "@/design-system/Carousel/InfiniteCarousel";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -40,6 +42,8 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(false);
   const [table, setTable] = useState<Props[]>([]);
   const [page, setPage] = useState(0);
+
+  const controls = useAnimation();
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -106,41 +110,39 @@ export default function Home() {
         <Article>Pourquoi nous choisir ?</Article>
         <Separator variant="simple" border="fine" />
         <Tarif>Des tarifs simples et transparents</Tarif>
-        <Separator variant="double" />
+        <Separator variant="simple" border="large" />
         {/* <Image src="/images/phosphor.png" alt="" width={1320} height={215} /> */}
         <div className="flex flex-col items-center mx-auto w-full">
           <Typographie size="h4">
-            Truster by the{" "}
+            ✦ Truster by the{" "}
             <span className="bg-[#37373724] py-0.5 px-1 rounded-md">
               fatest
             </span>{" "}
-            growing B2B companies
+            growing B2B companies ✦
           </Typographie>
-          <div className="flex flex-row items-center justify-center gap-2">
-            <Image
-              src="/svg/WTTJ.svg"
-              width={130}
-              height={50}
-              alt=""
-              className="grayscale"
-            />
-            <Image
-              src="/svg/SB.svg"
-              width={130}
-              height={50}
-              alt=""
-              className="grayscale"
-            />
-            <Image
-              src="/svg/contentsquare-seeklogo.svg"
-              width={130}
-              height={50}
-              alt=""
-              className="grayscale"
-            />
+          <InfiniteCarousel />
+        </div>
+        <Separator variant="simple" border="fine" />
+        <div className="flex flex-col gap-10">
+          <Typographie size="h4" balise="h4" theme="gray" weight="medium">
+            Legal & Privacy Center
+          </Typographie>
+          <div className="flex flex-col gap-3">
+            <Typographie size="h4" balise="h4" theme="gray" weight="medium">
+              Built in{" "}
+              <span className="bg-[#Ff0000]/10 py-0.5 px-1 rounded-md">
+                🇹🇷 Turkey
+              </span>{" "}
+              and{" "}
+              <span className="bg-blue/10 py-0.5 px-1 rounded-md">
+                🇲🇫 Paris
+              </span>
+            </Typographie>
+            <Typographie size="h4" balise="h4" theme="gray" weight="medium">
+              © 2024 Axis Studio
+            </Typographie>
           </div>
         </div>
-        <Separator variant="double" />
       </Container>
     </Inner>
   );
