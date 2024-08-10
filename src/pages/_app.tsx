@@ -3,6 +3,9 @@ import type { AppProps } from "next/app";
 import Lenis from "@studio-freight/lenis";
 import { useEffect } from "react";
 import { AnimatePresence } from "framer-motion";
+import { Footer } from "@/components/footer/Footer";
+import { Container } from "@/components/container/Container";
+import { Separator } from "@/components/separator/Separator";
 
 export default function App({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
@@ -27,6 +30,10 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <div className="pb-8">
       <AnimatePresence mode="wait">
         <Component key={router.route} {...pageProps} />
+        <Container>
+          <Separator variant="simple" border="fine" />
+          <Footer />
+        </Container>
       </AnimatePresence>
     </div>
   );

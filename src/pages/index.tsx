@@ -18,6 +18,7 @@ import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import page from "./helper/page";
 import InfiniteCarousel from "@/design-system/Carousel/InfiniteCarousel";
+import { Footer } from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -121,27 +122,6 @@ export default function Home() {
             growing B2B companies ✦
           </Typographie>
           <InfiniteCarousel />
-        </div>
-        <Separator variant="simple" border="fine" />
-        <div className="flex flex-col gap-10">
-          <Typographie size="h4" balise="h4" theme="gray" weight="medium">
-            Legal & Privacy Center
-          </Typographie>
-          <div className="flex flex-col gap-3">
-            <Typographie size="h4" balise="h4" theme="gray" weight="medium">
-              Built in{" "}
-              <span className="bg-[#Ff0000]/10 py-0.5 px-1 rounded-md">
-                🇹🇷 Turkey
-              </span>{" "}
-              and{" "}
-              <span className="bg-blue/10 py-0.5 px-1 rounded-md">
-                🇲🇫 Paris
-              </span>
-            </Typographie>
-            <Typographie size="h4" balise="h4" theme="gray" weight="medium">
-              © 2024 Axis Studio
-            </Typographie>
-          </div>
         </div>
       </Container>
     </Inner>

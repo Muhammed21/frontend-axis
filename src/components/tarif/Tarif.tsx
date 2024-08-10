@@ -102,15 +102,15 @@ export const Tarif = ({
             <div className="flex flex-col gap-6">
               <div className="flex flex-col gap-2">
                 {data.populaire ? (
-                  <div className="flex flex-row gap-2.5 align-middle items-center">
+                  <div className="flex flex-row gap-1.5 align-middle items-center">
+                    <div className="bg-[#37373724] rounded-none px-1 pb-0.5 align-middle items-center justify-center h-max w-max">
+                      <Typographie size="h4" balise="h4">
+                        ✦
+                      </Typographie>
+                    </div>
                     <Typographie size="h2" balise="h2" fontFamily="Cooper">
                       {data.title}
                     </Typographie>
-                    <div className="bg-[#37373724] border border-black px-1.5 py-1 align-middle items-center justify-center h-max w-max">
-                      <Typographie size="h5" balise="h5">
-                        Populaire
-                      </Typographie>
-                    </div>
                   </div>
                 ) : (
                   <Typographie size="h2" balise="h2" fontFamily="Cooper">

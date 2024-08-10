@@ -16,7 +16,7 @@ interface Props {
 const Success = ({ sessionId }: Props) => {
   const router = useRouter();
   const [dossierNumero, setDossierNumero] = useState("");
-  const [timer, setTimer] = useState(10);
+  const [timer, setTimer] = useState(30);
 
   useEffect(() => {
     const fetchSessionData = async () => {
@@ -70,8 +70,10 @@ const Success = ({ sessionId }: Props) => {
   }, [router, sessionId, timer]);
 
   return (
-    <Container className="flex flex-col items-center justify-between">
-      <Menu>Axis Studio</Menu>
+    <Container className="flex flex-col pb-5 items-center justify-between">
+      <Menu at={`Redirection dans ${timer}s`} link="/">
+        Axis Studio
+      </Menu>
       <div className="flex flex-col gap-5 items-center justify-center py-5 max-w-[380px] mx-auto">
         <Image
           src="/webp/system-regular-76-newspaper.webp"
@@ -105,12 +107,12 @@ const Success = ({ sessionId }: Props) => {
           Suivre mon dossier
         </Button>
       </div>
-      <div className="sm:flex hidden absolute bottom-2">
+      {/* <div className="sm:flex hidden absolute bottom-2">
         <Button variant="button" icon="true" isLoading>
           Redirection automatique dans{" "}
           <span className="font-medium">{timer}s</span>
         </Button>
-      </div>
+      </div> */}
     </Container>
   );
 };

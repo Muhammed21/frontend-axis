@@ -28,6 +28,7 @@ export const Article = ({
   const [isLoading, setIsLoading] = useState(false);
   const [table, setTable] = useState<Props[]>([]);
   const [page, setPage] = useState(0);
+  const [openArticleId, setOpenArticleId] = useState<number | null>(null); // ID de l'article ouvert
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -48,6 +49,7 @@ export const Article = ({
 
     fetchPosts();
   }, [page]);
+
   // Vérification des états de chargement et d'erreur après l'appel de tous les hooks
   if (isLoading) {
     return (
@@ -58,6 +60,16 @@ export const Article = ({
       </div>
     );
   }
+
+  const toggleArticle = (id: number) => {
+    // Si l'article cliqué est déjà ouvert, on le ferme
+    if (openArticleId === id) {
+      setOpenArticleId(null);
+    } else {
+      setOpenArticleId(id);
+    }
+  };
+
   return (
     <section className="flex flex-col w-full justify-between space-y-5">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
@@ -78,10 +90,10 @@ export const Article = ({
             className={clsx(
               "flex flex-col relative space-y-4 sm:border-r border-r-0 border-x-0 border border-b-1 border-t-0 pb-8 sm:pb-0 sm:border-b-0 border-black sm:px-3 px-0 items-start justify-start w-full sm:max-w-[330px] space-x-4",
               index === 0 && "pl-0",
-              index === 3 && "border-none pb-1"
+              index === 3 && "border-none pb-0.5"
             )}
           >
-            <div className="flex relative flex-col items-start justify-between align-top h-max space-y-5">
+            <div className="flex relative flex-col items-start justify-between align-top h-max space-y-3.5">
               <div className="bg-badge/20 px-1.5 py-1 w-max h-max">
                 <Typographie size="h5" balise="h5" theme="gray">
                   {data.badge}
@@ -105,9 +117,47 @@ export const Article = ({
                   {data.content}
                 </Typographie>
               </div>
-              <Button fontFamily="Courier" variant="demi-link" icon="true">
-                {data.button}
-              </Button>
+              {/* Menu déroulant */}
+              <div
+                className={clsx(
+                  "overflow-hidden transition-all duration-500 ease-in-out",
+                  openArticleId === data.id ? "max-h-screen" : "max-h-0"
+                )}
+              >
+                <div className="bg-[#37373713] p-1.5 rounded-sm border-gray border border-dashed">
+                  <Typographie
+                    size="h5"
+                    balise="h5"
+                    fontFamily="MaisonNeue"
+                    className=" w-full sm:max-w-[295px] leading-5 text-black/85"
+                  >
+                    {data.content}
+                  </Typographie>
+                </div>
+              </div>
+              {/* Bouton pour afficher/masquer le menu */}
+              <div
+                className="flex flex-row gap-2 items-center align-middle justify-center"
+                onClick={() => toggleArticle(data.id!)}
+              >
+                <Image
+                  src="/svg/Arrow.svg"
+                  alt=""
+                  width={22}
+                  height={22}
+                  className={clsx(
+                    openArticleId === data.id ? "rotate-0" : "rotate-90"
+                  )}
+                />
+                <Typographie
+                  fontFamily="Courier"
+                  size="h4"
+                  balise="h4"
+                  className="underline-from-left-projet text-black underline cursor-pointer"
+                >
+                  {data.button}
+                </Typographie>
+              </div>
             </div>
           </div>
         ))}
