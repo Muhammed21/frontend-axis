@@ -8,7 +8,6 @@ import {
   CardElement,
 } from "@stripe/react-stripe-js";
 import { Button } from "@/design-system/button/Button";
-import { Typographie } from "@/design-system/typographie/Typographie";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
@@ -95,11 +94,11 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ name, amount, id }) => {
         // <button type="submit" disabled={!stripe || loading || cooldown > 0}>
         //   Réessayez dans {cooldown}s
         // </button>
-        <div className="flex flex-row gap-2.5 items-center ">
-          {/* <Image src="/svg/money-wavy-fill.svg" alt="" width={22} height={22} /> */}
+        <div className="flex flex-row gap-2.5">
+          {/* <Image src="/svg/coins-fill.svg" alt="" width={22} height={22} /> */}
 
           <Button variant="demi-link" icon="false" fontFamily="Courier">
-            Comptant -:- {amount}€
+            Acompte -:- {amount}€
           </Button>
         </div>
       )}
@@ -108,14 +107,14 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ name, amount, id }) => {
   );
 };
 
-const Checkout: React.FC<{
+const CheckoutLater: React.FC<{
   name: string;
   amount: number;
   id: number;
 }> = ({ name, amount, id }) => (
   <Elements stripe={stripePromise}>
-    <CheckoutForm name={name} amount={amount} id={id} />
+    <CheckoutForm name={name} amount={amount * 0.2} id={id} />
   </Elements>
 );
 
-export default Checkout;
+export default CheckoutLater;
