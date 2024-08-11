@@ -59,7 +59,7 @@ export const Fonctionnalite = ({ children }: Props) => {
   return (
     <section className="flex flex-col space-y-3">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
-        <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
+        <Image src="/svg/pencil-ruler.svg" width={24} height={24} alt="" />
         <Typographie
           size="h4"
           balise="h4"

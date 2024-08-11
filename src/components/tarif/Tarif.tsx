@@ -91,7 +91,7 @@ export const Tarif = ({
   return (
     <section className="flex flex-col items-start justify-start gap-5">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
-        <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
+        <Image src="/svg/coins.svg" width={24} height={24} alt="" />
         <Typographie
           size="h4"
           balise="h4"
@@ -224,14 +224,26 @@ export const Tarif = ({
                   {data.button}
                 </Button>
               </a> */}
+
               <Credenza>
                 <CredenzaTrigger asChild>
-                  <Button variant="demi-link" icon="true" fontFamily="Courier">
+                  {/* <Button variant="demi-link" icon="true" fontFamily="Courier">
                     {data.button}
-                  </Button>
+                  </Button> */}
+                  <button className="flex flex-row gap-2 items-center align-middle">
+                    <Image src="/svg/Arrow.svg" alt="" width={22} height={22} />
+                    <Typographie
+                      size="h4"
+                      balise="h4"
+                      fontFamily="Courier"
+                      className="underline-from-left-projet"
+                    >
+                      <button className="underline">{data.button}</button>
+                    </Typographie>
+                  </button>
                 </CredenzaTrigger>
                 <CredenzaContent>
-                  <CredenzaHeader>
+                  <CredenzaHeader className="flex flex-row w-full justify-between">
                     <div className="flex flex-row w-max gap-2 items-center align-middle">
                       <Image
                         src="/svg/receipt.svg"
@@ -269,11 +281,17 @@ export const Tarif = ({
                       </Typographie>
                     </div>
                     <div className="bg-gray/15 border border-dashed">
-                      <CredenzaBody className="md:px-3 py-3">
+                      <CredenzaBody className="flex flex-row justify-between md:px-3 py-3">
                         <Checkout
                           name={data.title ?? ""}
                           amount={data.stripeLink ?? 0}
                           id={data.id ?? 0}
+                        />
+                        <Image
+                          src="/svg/info-gray.svg"
+                          alt=""
+                          width={20}
+                          height={20}
                         />
                       </CredenzaBody>
                     </div>
@@ -298,11 +316,18 @@ export const Tarif = ({
                         </Typographie>
                       </div>
                       <div className="bg-gray/15 border border-dashed">
-                        <CredenzaBody className="md:px-3 py-3">
+                        <CredenzaBody className="flex flex-row justify-between md:px-3 py-3">
                           <CheckoutLater
                             name={data.title ?? ""}
                             amount={data.stripeLink ?? 0}
                             id={data.id ?? 0}
+                          />
+
+                          <Image
+                            src="/svg/info-gray.svg"
+                            alt=""
+                            width={20}
+                            height={20}
                           />
                         </CredenzaBody>
                       </div>

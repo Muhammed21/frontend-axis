@@ -42,7 +42,7 @@ export default async function handler(
         },
         mode: "payment",
         // expires_at: 30,
-        // allow_promotion_codes: true,
+        allow_promotion_codes: true,
         success_url: `${req.headers.origin}/success/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}`, //URL: /cancel/cancel
       });

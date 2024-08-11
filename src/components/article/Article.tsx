@@ -73,7 +73,7 @@ export const Article = ({
   return (
     <section className="flex flex-col w-full justify-between space-y-5">
       <div className="flex flex-row w-max gap-2 items-center align-middle">
-        <Image src="/svg/Typographie.svg" width={24} height={24} alt="" />
+        <Image src="/svg/Certificate.svg" width={24} height={24} alt="" />
         <Typographie
           size="h4"
           balise="h4"
