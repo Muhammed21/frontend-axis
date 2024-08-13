@@ -8,7 +8,6 @@ import { Container } from "@/components/container/Container";
 import { Button } from "@/design-system/button/Button";
 import { Typographie } from "@/design-system/typographie/Typographie";
 import SingleProjet from "@/components/projet/SingleProjet";
-// import { SinlgeProduct } from "../../components/projet/SingleProjet";
 
 export default function Single({ post }) {
   const router = useRouter();
@@ -37,7 +36,17 @@ export async function getServerSideProps({ params }) {
   const res = await fetch(
     `https://backend-axis-studio.vercel.app/api/projet/?id=${params.id}`
   );
+
+  if (!res.ok) {
+    return { notFound: true };
+  }
+
   const post = await res.json();
+
+  // Si le post est vide ou n'existe pas
+  if (!post || post.length === 0) {
+    return { notFound: true };
+  }
 
   return { props: { post } };
 }

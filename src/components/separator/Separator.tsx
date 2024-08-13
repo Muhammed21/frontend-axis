@@ -1,14 +1,24 @@
 import { Button } from "@/design-system/button/Button";
+import { Typographie } from "@/design-system/typographie/Typographie";
 import clsx from "clsx";
 import Image from "next/image";
 import { useState } from "react";
+import Checkout from "../buyButton/buyButton";
+import { CredenzaMenu } from "../credenza/credenzaMenu";
 
 interface Props {
   variant?: "simple" | "double" | "projet" | "prix";
   border?: "fine" | "large";
+  totalPrice?: number;
+  data?: any;
 }
 
-export const Separator = ({ variant = "simple", border = "fine" }: Props) => {
+export const Separator = ({
+  variant = "simple",
+  border = "fine",
+  totalPrice,
+  data,
+}: Props) => {
   //Définition des types
   let variantStyles: String = "";
   let borderStyles: String = "";
@@ -106,6 +116,42 @@ export const Separator = ({ variant = "simple", border = "fine" }: Props) => {
                 >
                   &#62;
                 </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {variant === "prix" && (
+        <div className="flex flex-col gap-10 w-full">
+          <div className="relative flex w-full pb-4 items-center justify-center align-middle">
+            <Separator variant="simple" border="large" />
+            <div className="absolute flex flex-row gap-3 z-10">
+              <div className="bg-white z-0">
+                <Button
+                  variant="button"
+                  className="z-10"
+                  icon="false"
+                  fontFamily="Cooper"
+                >
+                  Prix total
+                </Button>
+              </div>
+              <div className="bg-white items-center align-middle">
+                <Button variant="button" fontFamily="Courier" icon="false">
+                  <Typographie weight="bold">— {totalPrice}€ —</Typographie>
+                </Button>
+              </div>
+              <div className="bg-white z-0">
+                <Button
+                  variant="button"
+                  className="z-10"
+                  icon="true"
+                  fontFamily="Cooper"
+                >
+                  Acheter
+                </Button>
+                {/* <CredenzaMenu data={data} /> */}
               </div>
             </div>
           </div>

@@ -113,7 +113,7 @@ const CheckoutLater: React.FC<{
   id: number;
 }> = ({ name, amount, id }) => (
   <Elements stripe={stripePromise}>
-    <CheckoutForm name={name} amount={amount * 0.2} id={id} />
+    <CheckoutForm name={name} amount={amount * 0.25} id={id} />
   </Elements>
 );
 

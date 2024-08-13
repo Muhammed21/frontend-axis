@@ -8,7 +8,9 @@ import Image from "next/image";
 export default function Helper() {
   return (
     <Container>
-      <Menu>Design System</Menu>
+      <Menu at="Suivre mon dossier" link="/">
+        Design System
+      </Menu>
       <div className="flex flex-row align-middle items-center justify-between">
         <Button variant="link" icon="true" fontFamily="Courier">
           Voici un lien avec une icône
