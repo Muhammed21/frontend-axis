@@ -13,30 +13,58 @@ import {
 import Image from "next/image";
 
 const LOGOS = [
-  <FigmaLogoIcon width={24} height={24} className="text-black" />,
-  <GitHubLogoIcon width={24} height={24} className="text-slate-800" />,
-  <LinkedInLogoIcon width={24} height={24} className="text-slate-800" />,
-  <Image
-    src="/svg/SB.svg"
-    alt=""
-    width={140}
-    height={24}
-    className=" grayscale"
-  />,
-  <Image
-    src="/svg/WTTJ.svg"
-    alt=""
-    width={140}
-    height={24}
-    className=" grayscale"
-  />,
-  <Image
-    src="/svg/contentsquare-seeklogo.svg"
-    alt=""
-    width={140}
-    height={24}
-    className="grayscale"
-  />,
+  {
+    id: "figma",
+    element: <FigmaLogoIcon width={24} height={24} className="text-black" />,
+  },
+  {
+    id: "github",
+    element: (
+      <GitHubLogoIcon width={24} height={24} className="text-slate-800" />
+    ),
+  },
+  {
+    id: "linkedIn",
+    element: (
+      <LinkedInLogoIcon width={24} height={24} className="text-slate-800" />
+    ),
+  },
+  {
+    id: "sb",
+    element: (
+      <Image
+        src="/svg/SB.svg"
+        alt=""
+        width={140}
+        height={24}
+        className=" grayscale"
+      />
+    ),
+  },
+  {
+    id: "wttj",
+    element: (
+      <Image
+        src="/svg/WTTJ.svg"
+        alt=""
+        width={140}
+        height={24}
+        className=" grayscale"
+      />
+    ),
+  },
+  {
+    id: "contentsquare",
+    element: (
+      <Image
+        src="/svg/contentsquare-seeklogo.svg"
+        alt=""
+        width={140}
+        height={24}
+        className="grayscale"
+      />
+    ),
+  },
 ];
 
 export const InfiniteSlider = () => {
@@ -46,17 +74,17 @@ export const InfiniteSlider = () => {
         {LOGOS.map((logo, index) => (
           <div
             className="slide flex w-max h-max items-center justify-center"
-            key={index}
+            key={logo.id}
           >
-            {logo}
+            {logo.element}
           </div>
         ))}
         {LOGOS.map((logo, index) => (
           <div
             className="slide flex w-max h-max items-center justify-center"
-            key={index}
+            key={logo.id}
           >
-            {logo}
+            {logo.element}
           </div>
         ))}
       </div>

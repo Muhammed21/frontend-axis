@@ -30,7 +30,7 @@ interface Props {
   button?: string;
 }
 
-const customePlan = ({ button, title, id }: Props) => {
+const CustomePlan = ({ button, title, id }: Props) => {
   const [stripeLink, setStripeLink] = useState(0);
   const [addedItems, setAddedItems] = useState<number[]>([]);
   const [table, setTable] = useState<Props[]>([]);
@@ -159,4 +159,4 @@ const customePlan = ({ button, title, id }: Props) => {
   );
 };
 
-export default customePlan;
+export default CustomePlan;
