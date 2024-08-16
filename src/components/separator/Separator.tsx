@@ -2,22 +2,25 @@ import { Button } from "@/design-system/button/Button";
 import { Typographie } from "@/design-system/typographie/Typographie";
 import clsx from "clsx";
 import Image from "next/image";
-import { useState } from "react";
-import Checkout from "../buyButton/buyButton";
+import { useState, useEffect } from "react";
+import CountUp from "react-countup";
 import { CredenzaMenu } from "../credenza/credenzaMenu";
+import { PlanMenu } from "../credenza/planMenu";
 
 interface Props {
   variant?: "simple" | "double" | "projet" | "prix";
   border?: "fine" | "large";
-  totalPrice?: number;
-  data?: any;
+  stripeLink?: number;
+  id?: string;
+  title?: string;
 }
 
 export const Separator = ({
   variant = "simple",
   border = "fine",
-  totalPrice,
-  data,
+  stripeLink,
+  id,
+  title,
 }: Props) => {
   //Définition des types
   let variantStyles: String = "";
@@ -59,6 +62,14 @@ export const Separator = ({
   const nextImage = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
+
+  const [animatedPrice, setAnimatedPrice] = useState(0);
+
+  useEffect(() => {
+    if (stripeLink !== undefined) {
+      setAnimatedPrice(stripeLink);
+    }
+  }, [stripeLink]);
 
   return (
     <section className="w-full">
@@ -127,7 +138,7 @@ export const Separator = ({
           <div className="relative flex w-full pb-4 items-center justify-center align-middle">
             <Separator variant="simple" border="large" />
             <div className="absolute flex flex-row gap-3 z-10">
-              <div className="bg-white z-0">
+              <div className="sm:flex hidden bg-white z-0">
                 <Button
                   variant="button"
                   className="z-10"
@@ -139,19 +150,29 @@ export const Separator = ({
               </div>
               <div className="bg-white items-center align-middle">
                 <Button variant="button" fontFamily="Courier" icon="false">
-                  <Typographie weight="bold">— {totalPrice}€ —</Typographie>
+                  -{" "}
+                  <CountUp
+                    start={0}
+                    end={animatedPrice}
+                    duration={2} // Animation duration in seconds
+                    separator=" "
+                    decimal=","
+                    prefix=""
+                    suffix=" €"
+                  />{" "}
+                  -
                 </Button>
               </div>
               <div className="bg-white z-0">
-                <Button
+                {/* <Button
                   variant="button"
-                  className="z-10"
+                  className="z-10 underline"
                   icon="true"
                   fontFamily="Cooper"
                 >
-                  Acheter
-                </Button>
-                {/* <CredenzaMenu data={data} /> */}
+                  Génerer un ticket
+                </Button> */}
+                <PlanMenu stripeLink={stripeLink} title={title} id={id} />
               </div>
             </div>
           </div>

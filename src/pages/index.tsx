@@ -17,7 +17,7 @@ import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
 import { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import page from "./helper/page";
-import InfiniteCarousel from "@/design-system/Carousel/InfiniteCarousel";
+import { InfiniteSlider } from "@/design-system/Carousel/InfiniteSlider";
 import { Footer } from "@/components/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -121,7 +121,7 @@ export default function Home() {
             </span>{" "}
             growing B2B companies ✦
           </Typographie>
-          <InfiniteCarousel />
+          <InfiniteSlider />
         </div>
       </Container>
     </Inner>

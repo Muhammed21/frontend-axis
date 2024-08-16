@@ -102,13 +102,22 @@
     transition: filter 0.3s ease-in-out;
   }
 }
+.slide {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 20;
+}
 
 .inner {
   background-color: black;
   .page {
     background-color: white;
   }
-  .slide {
+  .slider {
     height: 100vh;
     width: 100%;
     position: fixed;

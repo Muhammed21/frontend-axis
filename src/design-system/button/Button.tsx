@@ -81,7 +81,7 @@ export const Button = ({
       {disable && (
         <div className="flex flex-row gap-2 items-center align-middle justify-center">
           <div className="underline-from-left-disable text-black cursor-not-allowed">
-            Bouton désactivé
+            {children}
           </div>
         </div>
       )}

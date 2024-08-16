@@ -12,7 +12,7 @@ export const Footer = () => {
           balise="h4"
           theme="gray"
           weight="medium"
-          className="flex flex-row gap-2.5 underline-from-left w-max"
+          className="flex flex-row gap-2.5 underline-from-left w-max cursor-pointer"
         >
           Legal & Privacy Center
         </Typographie>

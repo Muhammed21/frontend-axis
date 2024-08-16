@@ -120,7 +120,7 @@ export const Tarif = ({
                 <div className="flex flex-col gap-2">
                   {data.populaire ? (
                     <div className="flex flex-row gap-1.5 align-middle items-center">
-                      <div className="bg-[#37373724] rounded-none px-1 pb-0.5 align-middle items-center justify-center h-max w-max">
+                      <div className="bg-[#37373724] rounded-none px-1 sm:pb-0 pb-0.5 align-middle items-center justify-center h-max w-max">
                         <Typographie size="h4" balise="h4">
                           ✦
                         </Typographie>

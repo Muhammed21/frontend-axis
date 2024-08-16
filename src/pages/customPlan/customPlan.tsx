@@ -7,55 +7,51 @@ import { Button } from "@/design-system/button/Button";
 import { Separator } from "@/components/separator/Separator";
 import AnimatedText from "@/components/animated-text/animatedText";
 import { useEffect, useState } from "react";
-import { Props } from "next/script";
+import Checkout from "@/components/buyButton/buyButton";
+import CheckoutLater from "@/components/buyLater/buyLater";
+import {
+  Credenza,
+  CredenzaBody,
+  CredenzaClose,
+  CredenzaContent,
+  CredenzaDescription,
+  CredenzaFooter,
+  CredenzaHeader,
+  CredenzaTitle,
+  CredenzaTrigger,
+} from "@/components/ui/credenza";
+import { PlanMenu } from "@/components/credenza/planMenu";
 
 const TARIF_URL = "/api/tarif";
 
-const customePlan = () => {
-  const [totalPrice, setTotalPrice] = useState(0);
+interface Props {
+  id?: number;
+  title?: string;
+  button?: string;
+}
+
+const customePlan = ({ button, title, id }: Props) => {
+  const [stripeLink, setStripeLink] = useState(0);
   const [addedItems, setAddedItems] = useState<number[]>([]);
-  const [error, setError] = useState();
-  const [isLoading, setIsLoading] = useState(false);
   const [table, setTable] = useState<Props[]>([]);
-  const [page, setPage] = useState(0);
-
-  useEffect(() => {
-    const fetchPosts = async () => {
-      setIsLoading(true);
-      try {
-        const res = await fetch(`${TARIF_URL}?page=${page}`);
-        if (!res.ok) {
-          throw new Error("Network response was not ok");
-        }
-        const table = (await res.json()) as Props[];
-        setTable(table);
-      } catch (e: any) {
-        setError(e);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchPosts();
-  }, [page]);
 
   const toggleItem = (index: number, amount: number) => {
     if (addedItems.includes(index)) {
       // Si l'élément est déjà ajouté, le retirer
-      setTotalPrice(totalPrice - amount);
+      setStripeLink(stripeLink - amount);
       setAddedItems(addedItems.filter((item) => item !== index));
     } else {
       // Sinon, l'ajouter
-      setTotalPrice(totalPrice + amount);
+      setStripeLink(stripeLink + amount);
       setAddedItems([...addedItems, index]);
     }
   };
 
   return (
     <Inner>
-      <Container>
-        <Menu at="Nous contacter" link="/">
-          Axis Studio
+      <Container className="pb-4">
+        <Menu at="Nous contacter pour plus d'information" link="/">
+          Un prix unique
         </Menu>
         <div className="flex flex-col space-y-5 relative pb-7">
           <div className="flex flex-row w-max gap-2 items-center align-middle">
@@ -66,7 +62,7 @@ const customePlan = () => {
               fontFamily="Courier"
               className="cursor-s-resize"
             >
-              <AnimatedText>Nombre de page(s)</AnimatedText>
+              <AnimatedText>Nombre de page(s) -:- {stripeLink}€</AnimatedText>
             </Typographie>
           </div>
 
@@ -75,7 +71,7 @@ const customePlan = () => {
               <div
                 key={index}
                 className={`flex flex-col gap-6 border border-black p-4 items-start lg:w-[320px] w-full h-max ${
-                  addedItems.includes(index) ? "bg-gray-200" : ""
+                  addedItems.includes(index) ? "bg-lightorange" : ""
                 }`}
               >
                 <div className="flex flex-col gap-2">
@@ -155,7 +151,9 @@ const customePlan = () => {
             ))}
           </div>
         </div>
-        <Separator variant="prix" totalPrice={totalPrice} />
+        <Separator variant="prix" stripeLink={stripeLink} />
+
+        <Image src="/images/phosphor.png" alt="" width={1320} height={240} />
       </Container>
     </Inner>
   );

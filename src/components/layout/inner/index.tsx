@@ -16,7 +16,7 @@ const anim = (variants: any) => {
 export default function Inner({ children }: any) {
   return (
     <div className="inner m-0">
-      <motion.div className="slide" {...anim(slide)} />
+      <motion.div className="slider" {...anim(slide)} />
       <motion.div className="page" {...anim(perspective)}>
         <motion.div {...anim(opacity)}>{children}</motion.div>
       </motion.div>
