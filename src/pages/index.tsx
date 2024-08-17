@@ -78,7 +78,11 @@ export default function Home() {
   return (
     <Inner>
       <Container>
-        <Menu at="Suivre mon dossier" link="./folderSearch/FolderSearch">
+        <Menu
+          at="Suivre mon dossier"
+          link="./folderSearch/FolderSearch"
+          asBrand
+        >
           Axis Studio
         </Menu>
         <Header />

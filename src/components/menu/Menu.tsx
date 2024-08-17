@@ -19,6 +19,7 @@ interface Props {
   mail?: string;
   link?: string;
   children?: React.ReactNode;
+  asBrand?: boolean;
 }
 
 export const Menu = ({
@@ -30,6 +31,7 @@ export const Menu = ({
   mail,
   children,
   link,
+  asBrand = false,
 }: Props) => {
   return (
     <section className="relative z-10 flex flex-col gap-y-10 w-full items-center h-max pt-8">
@@ -81,7 +83,7 @@ export const Menu = ({
               className="flex"
             >
               {children}
-              <span className="text-h4">®</span>
+              {asBrand && <span className="text-h4">®</span>}
             </Typographie>
           </div>
           <hr className="sm:flex-1 hidden sm:mx-4 ml-4 mr-0 border-[0.7px] border-black" />
@@ -202,7 +204,7 @@ export const Menu = ({
               className="flex"
             >
               {children}
-              <span className="text-h3">®</span>
+              {asBrand && <span className="text-h3">®</span>}
             </Typographie>
           </div>
           <Separator variant="simple" border="fine" />

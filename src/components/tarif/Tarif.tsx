@@ -230,7 +230,7 @@ export const Tarif = ({
               </a> */}
 
                 {index === 3 ? (
-                  <Link href="./customPlan/customPlan">
+                  <Link href="./customPlan/customPlan" className="h-[21px]">
                     <Button
                       variant="demi-link"
                       icon="true"
