@@ -138,11 +138,11 @@ export async function getServerSideProps(context: any) {
   const session = await res.json();
   console.log("Server-side fetched session data:", session); // Debug: Affiche les données récupérées côté serveur
 
-  if (!session || !session.metadata) {
-    return {
-      notFound: true, // Retourne une page 404 si la session est introuvable ou invalide
-    };
-  }
+  // if (!session || !session.metadata) {
+  //   return {
+  //     notFound: true, // Retourne une page 404 si la session est introuvable ou invalide
+  //   };
+  // }
 
   return {
     props: {
