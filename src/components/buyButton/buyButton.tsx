@@ -1,19 +1,11 @@
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-import Image from "next/image";
-import {
-  Elements,
-  useStripe,
-  useElements,
-  CardElement,
-} from "@stripe/react-stripe-js";
+import { Elements, useStripe, useElements } from "@stripe/react-stripe-js";
 import { Button } from "@/design-system/button/Button";
-import { Typographie } from "@/design-system/typographie/Typographie";
 
 const stripePromise = loadStripe(
   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!
 );
-
 const SESSION_URL = "/api/checkout-session";
 
 interface CheckoutFormProps {
@@ -46,16 +38,13 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ name, amount, id }) => {
     setLoading(true);
     setCooldown(45);
 
-    const customerEmail = "customer@example.com"; // Récupérez cela du formulaire de l'utilisateur
-    const customerName = "Muhammed Cavus"; // Récupérez cela du formulaire de l'utilisateur
-
     try {
       const res = await fetch(`${SESSION_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, amount, id, customerEmail, customerName }),
+        body: JSON.stringify({ name, amount, id }),
       });
 
       if (!res.ok) {
@@ -74,7 +63,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ name, amount, id }) => {
     } catch (error: any) {
       setError(error.message || "An unknown error occurred");
     } finally {
-      setLoading(false); // Réinitialisation du chargement une fois terminé
+      setLoading(false);
     }
   };
 
@@ -92,18 +81,12 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ name, amount, id }) => {
           </Button>
         </div>
       ) : (
-        // <button type="submit" disabled={!stripe || loading || cooldown > 0}>
-        //   Réessayez dans {cooldown}s
-        // </button>
         <div className="flex flex-row gap-2.5 items-center ">
-          {/* <Image src="/svg/money-wavy-fill.svg" alt="" width={22} height={22} /> */}
-
           <Button variant="demi-link" icon="false" fontFamily="Courier">
             Comptant -:- {amount}€
           </Button>
         </div>
       )}
-      {/* {error && <div>{error}</div>} */}
     </form>
   );
 };

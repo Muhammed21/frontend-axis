@@ -21,6 +21,12 @@ export default async function handler(
     });
 
     try {
+      // Optionnel: Création d'un client Stripe
+      const customer = await stripe.customers.create({
+        email: customerEmail,
+        name: customerName,
+      });
+
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ["card", "klarna", "link", "paypal"],
         line_items: [
@@ -35,13 +41,12 @@ export default async function handler(
             quantity: 1,
           },
         ],
-        customer_email: customerEmail,
+        customer: customer.id, // Associe la session au client Stripe
         metadata: {
           customerName: customerName,
           planId: id,
         },
         mode: "payment",
-        // expires_at: 30,
         allow_promotion_codes: true,
         success_url: `${req.headers.origin}/success/success?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${req.headers.origin}`, //URL: /cancel/cancel
