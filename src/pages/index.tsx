@@ -117,7 +117,10 @@ export default function Home() {
         <Tarif>Des tarifs simples et transparents</Tarif>
         <Separator variant="simple" border="large" />
         {/* <Image src="/images/phosphor.png" alt="" width={1320} height={215} /> */}
-        <div className="flex flex-col items-center mx-auto w-full">
+        <div
+          style={{ display: "flex" }}
+          className="flex flex-col items-center mx-auto w-full"
+        >
           <Typographie size="h4">
             ✦ Truster by the{" "}
             <span className="bg-[#37373724] py-0.5 px-1 rounded-md">
