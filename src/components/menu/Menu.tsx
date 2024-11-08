@@ -36,7 +36,7 @@ export const Menu = ({
   return (
     <section className="relative z-10 flex flex-col gap-y-10 w-full items-center h-max pt-8">
       <div className="w-full">
-        <div className="sm:flex hidden w-full flex-row items-center align-middle relative gap-5">
+        <div className="lg:flex hidden w-full flex-row items-center align-middle relative gap-5">
           <div className="flex w-max whitespace-nowrap">
             <Typographie
               fontFamily="Cooper"
@@ -72,8 +72,8 @@ export const Menu = ({
               nous on fait confiance <span className="font-courier">✦</span>
             </Typographie>
           </div>
-          <hr className="flex-1 sm:mx-4 ml-0 mr-4 border-[0.7px] border-black" />
-          <div className="sm:absolute relative left-1/2 px-5 transform -translate-x-1/2 bg-white">
+          <hr className="flex-1 lg:mx-4 ml-0 mr-4 border-[0.7px] border-black" />
+          <div className="lg:absolute relative left-1/2 px-5 transform -translate-x-1/2 bg-white">
             <Typographie
               fontFamily="CooperLight"
               size="h2"
@@ -86,8 +86,8 @@ export const Menu = ({
               {asBrand && <span className="text-h4">®</span>}
             </Typographie>
           </div>
-          <hr className="sm:flex-1 hidden sm:mx-4 ml-4 mr-0 border-[0.7px] border-black" />
-          <div className="sm:flex hidden w-max whitespace-nowrap gap-2.5 items-end justify-end align-middle">
+          <hr className="lg:flex-1 hidden lg:mx-4 ml-4 mr-0 border-[0.7px] border-black" />
+          <div className="lg:flex hidden w-max whitespace-nowrap gap-2.5 items-end justify-end align-middle">
             <Typographie
               fontFamily="Cooper"
               size="h4"
@@ -157,7 +157,7 @@ export const Menu = ({
           </div>
         </div>
         {/* partie mobile */}
-        <div className="sm:hidden flex flex-col gap-5 w-full items-center">
+        <div className="lg:hidden flex flex-col gap-5 w-full items-center">
           <div className="flex w-max whitespace-nowrap">
             <Typographie
               fontFamily="Cooper"

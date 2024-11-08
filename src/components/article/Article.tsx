@@ -83,12 +83,12 @@ export const Article = ({
           <AnimatedText>{children}</AnimatedText>
         </Typographie>
       </div>
-      <div className="flex sm:flex-row flex-col sm:gap-0 gap-8">
+      <div className="flex md:flex-row flex-col md:gap-0 gap-8">
         {table.map((data, index) => (
           <div
             key={data.id}
             className={clsx(
-              "flex flex-col relative space-y-4 sm:border-r border-r-0 border-x-0 border border-b-1 border-t-0 pb-8 sm:pb-0 sm:border-b-0 border-black sm:px-3 px-0 items-start justify-start w-full sm:max-w-[330px] space-x-4",
+              "flex flex-col relative space-y-4 md:border-r border-r-0 border-x-0 border border-b-1 border-t-0 pb-8 md:pb-0 md:border-b-0 border-black md:px-3 px-0 items-start justify-start w-full md:max-w-[330px] space-x-4",
               index === 0 && "pl-0",
               index === 3 && "border-none pb-0.5"
             )}
@@ -112,7 +112,7 @@ export const Article = ({
                   size="h5"
                   balise="h5"
                   fontFamily="MaisonNeue"
-                  className=" w-full sm:max-w-[295px] leading-5 text-black/85"
+                  className=" w-full md:max-w-[295px] leading-5 text-black/85"
                 >
                   {data.content}
                 </Typographie>
@@ -129,7 +129,7 @@ export const Article = ({
                     size="h5"
                     balise="h5"
                     fontFamily="MaisonNeue"
-                    className=" w-full sm:max-w-[295px] leading-5 text-black/85"
+                    className=" w-full md:max-w-[295px] leading-5 text-black/85"
                   >
                     {data.content}
                   </Typographie>
@@ -155,7 +155,7 @@ export const Article = ({
                   balise="h4"
                   className="underline-from-left-projet text-black underline cursor-pointer"
                 >
-                  {data.button}
+                  {openArticleId === data.id ? "Voir moins" : data.button}
                 </Typographie>
               </div>
             </div>

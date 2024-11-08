@@ -45,16 +45,13 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({ name, amount, id }) => {
     setLoading(true);
     setCooldown(45);
 
-    const customerEmail = "customer@example.com"; // Récupérez cela du formulaire de l'utilisateur
-    const customerName = "Muhammed Cavus"; // Récupérez cela du formulaire de l'utilisateur
-
     try {
       const res = await fetch(`${SESSION_URL}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, amount, id, customerEmail, customerName }),
+        body: JSON.stringify({ name, amount, id }),
       });
 
       if (!res.ok) {

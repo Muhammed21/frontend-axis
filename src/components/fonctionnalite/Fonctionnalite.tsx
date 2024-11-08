@@ -69,12 +69,12 @@ export const Fonctionnalite = ({ children }: Props) => {
           <AnimatedText>{children}</AnimatedText>
         </Typographie>
       </div>
-      <div className="flex sm:flex-row flex-col w-full justify-between items-center">
+      <div className="flex xl:flex-row flex-col w-full justify-between items-center">
         {/* partie de gauche */}
         <div className="flex flex-row items-end w-full">
           {/* ordinateur */}
           {showTableau1 && (
-            <div className="flex flex-col sm:w-[600px] w-full mx-0 h-80 bg-white border border-gray/40 rounded-none drop-shadow p-4">
+            <div className="flex flex-col xl:w-[600px] w-full mx-0 h-80 bg-white border border-gray/40 rounded-none drop-shadow p-4">
               <div className="bg-[#37373724] border border-dashed border-[#373737] h-max rounded-[0px] w-full py-2.5 px-4">
                 <Typographie size="h3" balise="h3" fontFamily="Cooper">
                   Axis Studio n°1
@@ -83,7 +83,7 @@ export const Fonctionnalite = ({ children }: Props) => {
             </div>
           )}
           {showTableau2 && (
-            <div className="flex flex-col sm:w-[600px] w-full mx-0 h-80 bg-white border border-gray/40 rounded-none drop-shadow p-4">
+            <div className="flex flex-col xl:w-[600px] w-full mx-0 h-80 bg-white border border-gray/40 rounded-none drop-shadow p-4">
               <div className="bg-orange/25 border border-dashed border-orange h-max rounded-[0px] w-full py-2.5 px-4">
                 <Typographie size="h3" balise="h3" fontFamily="Cooper">
                   Axis Studio n°2
@@ -92,7 +92,7 @@ export const Fonctionnalite = ({ children }: Props) => {
             </div>
           )}
           {showTableau3 && (
-            <div className="flex flex-col sm:w-[600px] w-full mx-0 h-80 bg-white border border-gray/40 rounded-none drop-shadow p-4">
+            <div className="flex flex-col xl:w-[600px] w-full mx-0 h-80 bg-white border border-gray/40 rounded-none drop-shadow p-4">
               <div className="bg-blue/25 border border-dashed border-blue h-max rounded-[0px] w-full py-2.5 px-4">
                 <Typographie size="h3" balise="h3" fontFamily="Cooper">
                   Axis Studio n°3
@@ -130,9 +130,9 @@ export const Fonctionnalite = ({ children }: Props) => {
           )}
         </div>
         {/* partie de droite */}
-        <div className="flex relative sm:flex-col pt-5 sm:pt-0 flex-row gap-14 items-center justify-center">
-          <div className="absolute sm:flex hidden left-3.5 border-l-[1.5px] z-[1] border-gray/40 w-[1px] h-[80%]" />
-          <hr className="absolute sm:hidden flex w-full border-[1px] border-gray/40" />
+        <div className="flex relative xl:flex-col pt-5 xl:pt-0 flex-row gap-14 items-center justify-center">
+          <div className="absolute xl:flex hidden left-3.5 border-l-[1.5px] z-[1] border-gray/40 w-[1px] h-[80%]" />
+          <hr className="absolute xl:hidden flex w-full border-[1px] border-gray/40" />
           <div className="flex flex-row gap-14 items-center justify-start z-10">
             {/* <div className="bg-[#535353] p-1.5 rounded-full items-center cursor-pointer">
               <Image
@@ -170,15 +170,16 @@ export const Fonctionnalite = ({ children }: Props) => {
                 />
               </div>
             </label>
-            <div className="sm:flex hidden">
+            <div className="xl:flex hidden">
               <Typographie
                 size="h4"
                 balise="h4"
                 fontFamily="MaisonNeue"
-                className="max-w-64"
+                className="w-max max-w-64"
               >
                 <span className="font-semibold font-courier">
-                  {table1.title}{" "}
+                  {table1.title}
+                  <br />
                 </span>
                 {table1.content}
               </Typographie>
@@ -220,15 +221,16 @@ export const Fonctionnalite = ({ children }: Props) => {
                 />
               </div>
             </label>
-            <div className="sm:flex hidden">
+            <div className="xl:flex hidden">
               <Typographie
                 size="h4"
                 balise="h4"
                 fontFamily="MaisonNeue"
-                className="max-w-64"
+                className="w-max max-w-64"
               >
                 <span className="font-semibold font-courier">
-                  {table2.title}{" "}
+                  {table2.title}
+                  <br />
                 </span>
                 {table2.content}
               </Typographie>
@@ -270,15 +272,16 @@ export const Fonctionnalite = ({ children }: Props) => {
                 />
               </div>
             </label>
-            <div className="sm:flex hidden">
+            <div className="xl:flex hidden">
               <Typographie
                 size="h4"
                 balise="h4"
                 fontFamily="MaisonNeue"
-                className="max-w-64"
+                className="w-max max-w-64"
               >
                 <span className="font-semibold font-courier">
-                  {table3.title}{" "}
+                  {table3.title}
+                  <br />
                 </span>
                 {table3.content}
               </Typographie>

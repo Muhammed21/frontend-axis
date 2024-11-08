@@ -10,11 +10,11 @@ import { useRouter } from "next/router";
 interface Props {
   children: React.ReactNode;
   id?: number;
-  img?: String;
-  title?: String;
-  content?: String;
-  button?: String;
-  data?: String;
+  img?: string;
+  title?: string;
+  content?: string;
+  button?: string;
+  data?: string;
 }
 
 const PROJET_URL = "/api/projet";
@@ -70,22 +70,22 @@ export const Projet = ({
           <AnimatedText>{children}</AnimatedText>
         </Typographie>
       </div>
-      <div className="flex sm:flex-row flex-col w-full justify-between items-center sm:gap-0 gap-8">
+      <div className="flex lg:flex-row flex-col w-full justify-between items-center lg:gap-0 gap-8">
         {table.map((data, index) => (
           <div
             key={data.id}
             className={clsx(
-              "flex flex-col sm:border-r border-r-0 border border-x-0 border-b-1 border-t-0 sm:border-b-0 border-black relative h-max sm:w-max w-full sm:px-3 px-0 sm:pb-0 pb-8 items-start justify-start gap-4 image-container",
-              index === 3 && "border-none pr-0 pb-1", // Styles pour le 4er element
+              "flex flex-col lg:border-r border-r-0 border border-x-0 border-b-1 border-t-0 lg:border-b-0 border-black relative h-max lg:w-max w-full lg:px-3 px-0 lg:pb-0 pb-8 items-start justify-start gap-4 image-container",
+              index === 3 && "border-none pr-0 pb-0", // Styles pour le 4er element
               index === 0 && "pl-0" // Styles pour le 1er element
             )}
           >
             <Image
-              //   src={data.img}
-              src="/images/article-grid.png"
+              src={data.img || "/images/article-grid.png"}
+              //src="/images/article-grid.png"
               width={320}
               height={170}
-              className="grayscale image sm:w-max w-full"
+              className="grayscale image lg:w-[400px] w-full lg:h-[188px] h-max max-h-[400px] object-cover object-center"
               alt=""
             />
             <div className="flex flex-col items-start justify-between align-top h-[140px]">

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import Link from "next/link";
 
 interface Props {
   sessionId: string;
@@ -108,9 +109,11 @@ const Success = ({ sessionId }: Props) => {
             suivre son avancé
           </Typographie>
         </div>
-        <Button variant="button" icon="false" className="z-10">
-          Suivre mon dossier
-        </Button>
+        <Link href={`/folderSearch/FolderSearch`}>
+          <Button variant="button" icon="false" className="z-10">
+            Suivre mon dossier
+          </Button>
+        </Link>
       </div>
       {/* <div className="sm:flex hidden absolute bottom-2">
         <Button variant="button" icon="true" isLoading>

@@ -21,7 +21,7 @@ export const Footer = () => {
         <Typographie size="h4" balise="h4" theme="gray" weight="medium">
           Développé en{" "}
           <span className=" bg-blue/10 text-black py-0.5 px-1  rounded-md">
-            🇲🇫 France
+            🇫🇷 France
           </span>{" "}
           et en{" "}
           <span className="bg-[#Ff0000]/10 text-black py-0.5 px-1 rounded-md">

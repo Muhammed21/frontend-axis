@@ -105,12 +105,12 @@ export const Tarif = ({
             <AnimatedText>{children}</AnimatedText>
           </Typographie>
         </div>
-        <div className="flex sm:flex-row flex-col gap-10 sm:gap-0 w-full justify-between">
+        <div className="flex md:flex-row flex-col gap-10 md:gap-0 w-full justify-between">
           {table.map((data, index) => (
             <div
               key={data.id}
               className={clsx(
-                "flex flex-col items-start sm:max-w-[330px] w-full space-y-4 sm:border-r sm:px-4 px-0 border-black border-r-none",
+                "flex flex-col items-start md:max-w-[330px] w-full space-y-4 md:border-r md:px-4 px-0 border-black border-r-none",
                 index === 0 && "pl-0",
                 index === 3 && "border-none pr-0"
               )}
@@ -120,7 +120,7 @@ export const Tarif = ({
                 <div className="flex flex-col gap-2">
                   {data.populaire ? (
                     <div className="flex flex-row gap-1.5 align-middle items-center">
-                      <div className="bg-[#37373724] rounded-none px-1 sm:pb-0 pb-0.5 align-middle items-center justify-center h-max w-max">
+                      <div className="bg-[#37373724] rounded-none px-1 md:pb-0 pb-0.5 align-middle items-center justify-center h-max w-max">
                         <Typographie size="h4" balise="h4">
                           ✦
                         </Typographie>
@@ -243,7 +243,7 @@ export const Tarif = ({
                   <CredenzaMenu data={data} />
                 )}
               </div>
-              <div className="sm:flex hidden border border-black img-pattern align-middle h-5 w-full" />
+              <div className="md:flex hidden border border-black img-pattern align-middle h-5 w-full" />
             </div>
           ))}
         </div>

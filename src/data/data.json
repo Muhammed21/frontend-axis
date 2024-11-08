@@ -1,16 +1,16 @@
 {
   "tableau": [
     {
-      "title": "Extract and prerender static content.",
-      "content": "Automatically get an optimized HTML page shell. "
+      "title": "Optimisation Mobile",
+      "content": "Assurez une expérience fluide et captivante sur tous les appareils."
     },
     {
-      "title": "Extract and prerender static content.",
-      "content": "Automatically get an optimized HTML page shell."
+      "title": "Vitesse de chargement",
+      "content": "Nous optimisons chaque page pour un chargement ultra-rapide."
     },
     {
-      "title": "Extract and prerender static content.",
-      "content": "Automatically get an optimized HTML page shell."
+      "title": "Sécurité Renforcée",
+      "content": "Protégez vos données avec des protocoles de sécurité avancés"
     }
   ]
 }

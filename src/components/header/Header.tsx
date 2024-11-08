@@ -25,16 +25,16 @@ export const Header = () => {
           weight="light"
           className="sm:flex hidden"
         >
-          What are icons? What are their benefits and what are they used to
-          achieve? Get an overview here.
+          L’agence qui transforme vos idées en expériences digitales conçus pour
+          captiver votre audience. Prêt à faire la différence ?
         </Typographie>
         <Typographie
           theme="black"
           weight="light"
           className="sm:hidden flex text-[19px]"
         >
-          What are icons? What are their benefits and what are they used to
-          achieve? Get an overview here.
+          L’agence qui transforme vos idées en expériences digitales conçus pour
+          captiver votre audience. Prêt à faire la différence ?
         </Typographie>
       </div>
       <div className="border border-gray/10 img-pattern sm:w-[100px] w-[50px] sm:h-[310px] h-[200px]"></div>

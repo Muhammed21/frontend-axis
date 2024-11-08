@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Card } from "./Card";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
+import Cookies from "js-cookie";
 
 interface DossierProps {
   id?: number;
@@ -19,7 +20,9 @@ interface DossierProps {
 const DOSSIER_URL = "/api/dossier";
 
 export const Statut = () => {
-  const [numDossier, setNumDossier] = useState("");
+  const [numDossier, setNumDossier] = useState(
+    Cookies.get("dossierNumero") || ""
+  );
   const [find, setFind] = useState(false);
   const [dossiers, setDossiers] = useState<DossierProps[]>([]);
   const [loading, setLoading] = useState(false);

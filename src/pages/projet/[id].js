@@ -1,12 +1,4 @@
-import AnimatedText from "@/components/animated-text/animatedText";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import Head from "next/head";
-import { Menu } from "@/components/menu/Menu";
-import { Separator } from "@/components/separator/Separator";
-import { Container } from "@/components/container/Container";
-import { Button } from "@/design-system/button/Button";
-import { Typographie } from "@/design-system/typographie/Typographie";
 import SingleProjet from "@/components/projet/SingleProjet";
 
 export default function Single({ post }) {
